@@ -1,6 +1,6 @@
-#Project 2a: Malloc and Free
+# Project 2a: Malloc and Free
 
-##Objectives
+## Objectives
 
 There are three objectives to this part of the assignment:
 
@@ -8,13 +8,13 @@ There are three objectives to this part of the assignment:
 * To do so in a performance-efficient manner.
 * To create a shared library.
 
-##Readings and Notes
+## Readings and Notes
 
 At some point you will decide to use a header per each allocated block. The maximum size of such a header is 16 bytes.
 
 Useful to read OSTEP [Chapter 16](http://pages.cs.wisc.edu/~remzi/OSTEP/vm-freespace.pdf).
 
-##Overview
+## Overview
 
 In this project, you will be implementing a memory allocator for the heap of a user-level process. Your functions will be to build your own malloc() and free().
 
@@ -33,7 +33,7 @@ For simplicity, your implementations of `mem_alloc()` and `mem_free()` should ba
 
 You will also provide a supporting function, `mem_dump()`, described below; this routine simply prints which regions are currently free and should be used by you for debugging purposes.
 
-##Program Specifications
+## Program Specifications
 
 For this project, you will be implementing several different routines as part of a shared library. Note that you will not be writing a main() routine for the code that you handin (but you should implement one for your own testing). We have provided the prototypes for these functions in the file [mem.h](../src/mem.h);  you should include this header file in your code to ensure that you are adhering to the specification exactly. **You should not change mem.h in any way!** We now define each of these routines more precisely.
 
@@ -74,7 +74,7 @@ Of course, these commands should be placed in a Makefile. Before you run "myprog
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:.
 ```
 
-##Unix Hints
+## Unix Hints
 
 In this project, you will use mmap to map zero'd pages (i.e., allocate new pages) into the address space of the calling process. Note there are a number of different ways that you can call mmap to achieve this same goal; we give one example here:
 
@@ -91,13 +91,13 @@ close(fd);
 return 0;
 ```
 
-##Hand In
+## Hand In
 
 * Source file `mem.c`
 * Makefile which builds the memory allocation library.
 
 
-##Grading
+## Grading
 
 Your implementation will be graded on functionality. However, we will also be comparing the performance of each of your projects, so try to be efficient!
 

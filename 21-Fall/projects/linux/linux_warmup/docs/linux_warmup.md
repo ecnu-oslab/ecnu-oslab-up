@@ -1,7 +1,7 @@
-#Project 0a: Linux Warm Up
+# Project 0a: Linux Warm Up
 
 
-##Objective
+## Objective
 
 This project is to help you getting familiar with Linux, which
 is, in fact, the operating system in the course title **Operating System Labs**. 
@@ -17,7 +17,7 @@ but highly recommend you to play with it as much as possible.
 
 
 
-##Overview
+## Overview
 The project contains two subparts and two bonus problems.
 In part 1, you will write shell scripts
 to accomplish simple tasks.
@@ -26,14 +26,14 @@ might be helpful.
 In part 2, you will practise with linux C programming environment (gcc compiler, gdb debugger, text editors).
 Finally, you can try some advanced text processing tools in bonus problems.
 
-##Readings
+## Readings
 
 OSTEP [Lab Tutorial](http://pages.cs.wisc.edu/~remzi/OSTEP/lab-tutorial.pdf)
 
 
-##Program Specifications
+## Program Specifications
 
-###Part 1
+### Part 1
 You need to write two shell scripts, both of them should be executable in a Linux shell.
 
 * `s1.sh`: 
@@ -65,7 +65,7 @@ bayes.rb root -rwxr-xr-x
 bbox root -rwxr-xr-x
 ```
 
-###Part 2
+### Part 2
 
 We have a C program [set_operation.c](../src/set_operation.c), which 
 contains several implementation bugs. You will first try to compile/run the program, then detect and correct the bugs using the gdb debugger. 
@@ -139,9 +139,9 @@ name alice ryan
 age 21 30
 ```
 
-##Hints
+## Hints
 
-###Part 1
+### Part 1
 
 * In the first script, you can use `echo` and redirection to output some texts into a file.
 * In the second script, you may use `xargs` (between `find` and `ls`) or pipe.
@@ -150,7 +150,7 @@ age 21 30
 * Print some information for debugging. 
 * Use `man` to get detail usages of commands.
 
-###Part 2 
+### Part 2 
 * Set breakpoints around important statements (e.g., loop, if) 
 * Print out values of variables (e.g., loop variables, contents of pointers).
 
@@ -163,7 +163,7 @@ age 21 30
     - For part 1, explain the shell commands in your scripts (e.g., usage, options).
     * For part 2, explain the meaning of gcc options for compiling your program. Explain the detailed process of debugging (where are your breakpoints located, which variables you've watched, etc.) and the bugs you found.
  
-##General Advice
+## General Advice
 
 Try to use and get familiar with the shell commands first. Make good use of "man", "help" and "--help".
 

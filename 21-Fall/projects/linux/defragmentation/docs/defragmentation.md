@@ -1,6 +1,6 @@
-#Project 5: Defragmentation
+# Project 5: Defragmentation
 
-##Overview
+## Overview
 
 This assignment has several goals. First, you'll get experience with file system structure. Second, you'll write a offline defragmentation algorithm. Third, you'll practice writing code without memory leaks. Finally, you'll practice describing an implemented algorithm with prose.
 
@@ -20,16 +20,16 @@ Your defragmenter should output a new disk image with "-defrag" concatenated to 
 
 should produce the output file "datafile-defrag".
 
-##Readings
+## Readings
 
 It will be useful to read OSTEP [Chapter 39](http://pages.cs.wisc.edu/~remzi/OSTEP/file-intro.pdf), 
 [Chapter 40](http://pages.cs.wisc.edu/~remzi/OSTEP/file-implementation.pdf).
 
-##Data Structures
+## Data Structures
 
 There are two important data structures stored on disk: the superblock and the inode.
 
-###Superblock
+### Superblock
 
 ```C
 struct superblock { 
@@ -48,7 +48,7 @@ For instance, if the inode offset is 1 and the block size is 512B, then the inod
 
 Each region fills up the disk to the next region; the swap region fills the disk to the end.
 
-###Inodes
+### Inodes
 
 ```C
 #define N_DBLOCKS 10 
@@ -76,7 +76,7 @@ The size field of the inode is used to determine which data block pointers are v
 
 The free block list is maintained as a linked list. The first 4 bytes of a free block contain an integer index to the next free block; the last free block contains -1 for the index.
 
-##Program Specifications
+## Program Specifications
 
 You will be given a disk image containing a file system. It will be correct (no corruption), and the free list of the superblock will list all the free indoes and the free data blocks.
 
@@ -91,9 +91,9 @@ After defragmenting, your new disk image should contain:
 
 A sample disk image for you to work with is available at [here](../src/datafile-frag.txt).
 
-##Hints
+## Hints
 
-###Binary File I/O
+### Binary File I/O
 
 You will need to do binary file I/O to read in the datafiles. You can do this with the fread library function. Here's some sample code to get you started. Note that this code does no error checking; if you use this code, you'll need to update it.
 
@@ -106,7 +106,7 @@ f = fopen("datafile-defrag", "r");
 bytes = fread(buffer, 1024, 1, f); 
 ```
 
-##Hand In
+## Hand In
 
 When we grade your project, we will expect to see the following files in your repository (there may be more):
 
@@ -117,7 +117,7 @@ When we grade your project, we will expect to see the following files in your re
 
 You should not turn in any binary or .o files. Only turn in source code and header files.
 
-##Grading
+## Grading
 
 When your code compiles (using the flags listed above), gcc should not display any warnings.
 Any warnings that remain will negatively impact your grade.

@@ -1,10 +1,10 @@
-#Project 1a: A Unix Shell
+# Project 1a: A Unix Shell
 
-##Updates
+## Updates
 
 * [here](../../../resources/pj2_test_samples.zip) are some test cases for your shell.
 
-##Objectives
+## Objectives
 
 There are three objectives to this assignment:
 
@@ -12,19 +12,19 @@ There are three objectives to this assignment:
 * To learn how processes are created, destroyed, and managed.
 * To gain exposure to the necessary functionality in shells.
 
-##Overview
+## Overview
 
 In this assignment, you will implement a command line interpreter or, as it is more commonly known, a shell. The shell should operate in this basic way: when you type in a command (in response to its prompt), the shell creates a child process that executes the command you entered and then prompts for more user input when it has finished.
 
 The shells you implement will be similar to, but simpler than, the one you run every day in Unix. You can find out which shell you are running by typing `echo $SHELL` at a prompt. You may then wish to look at the man pages for bash or the shell you are running (more likely tcsh or csh , or for those few wacky ones in the crowd, zsh or ksh or even fish ) to learn more about all of the functionality that can be present. For this project, you do not need to implement too much functionality.
 
-##Readings
+## Readings
 
 OSTEP [Chapter 5](http://pages.cs.wisc.edu/~remzi/OSTEP/cpu-api.pdf)
 
-##Program Specifications
+## Program Specifications
 
-###Basic Shell
+### Basic Shell
 
 Your basic shell is basically an interactive loop: it repeatedly prints a prompt "mysh> " (note the space after >), parses the input, executes the command specified on that line of input, and waits for the command to finish. This is repeated until the user types "exit". The name of your final executable should be **mysh** :
 
@@ -41,7 +41,7 @@ Note that the shell itself does not "implement" `ls` or really many other comman
 
 The maximum length of a line of input to the shell is 512 bytes (excluding the carriage return).
 
-###Built-in Commands
+### Built-in Commands
 
 Whenever your shell accepts a command, it should check whether the command is a **built-in** command or not. If it is, it should not be executed like other programs. Instead, your shell will invoke your implementation of the built-in command. For example, to implement the `exit` built-in command, you simply call `exit(0)`; in your C program.
 
@@ -74,7 +74,7 @@ mysh> pwd
 /home/username 
 ```
  
-###Redirection
+### Redirection
 
 Many times, a shell user prefers to send the output of his/her program to a file rather than to the screen. The shell provides this nice feature with the ">" character. Formally this is named as redirection of standard output. To make your shell users happy, your shell should also include this feature.
 
@@ -90,7 +90,7 @@ ls > out1 out2 out3
 ls > out1 > out2
 ```
  
-###Background Jobs
+### Background Jobs
 
 Sometimes, when using a shell, you want to be able to run multiple jobs concurrently. In most shells, this is implemented by letting you put a job in the "background". This is done as follows:
 
@@ -115,7 +115,7 @@ mysh> find . -name *.c -print &
 mysh> wait
 ```
 
-###Program Errors
+### Program Errors
 
 The one and only error message. A section about the Error Message has been added. In summary, you should print this one and only error message whenever you encounter an error of any type:
 
@@ -128,7 +128,7 @@ The error message should be printed to **stderr** (standard error). Also, do not
 
 There is a difference between errors that your shell catches and those that the program catches. Your shell should catch all the syntax errors specified in this project page. If the syntax of the command looks perfect, you simply run the specified program. If there is any program-related errors (e.g. invalid arguments to ls when you run it, for example), let the program prints its specific error messages in any manner it desires (e.g. could be stdout or stderr).
 
-###White Spaces
+### White Spaces
 
 Zero or more spaces can exist between a command and the shell special characters (i.e. ">" ). All of these examples are correct.
 
@@ -138,7 +138,7 @@ mysh> ls > a
 mysh> ls>a
 ```
  
-###Batch Mode
+### Batch Mode
 
 So far, you have run the shell in interactive mode. Most of the time, testing your shell in interactive mode is time-consuming. To make testing much faster, your shell should support batch mode .
 
@@ -201,7 +201,7 @@ some error printed here
  
 Important Note: To automate grading, we will heavily use the batch mode . If you do everything correctly except the batch mode, you could be in trouble. Hence, make sure you can read and run the commands in the batch file. Soon, we will provide some batch files for you to test your program.
 
-###Defensive Programming and Error Messages
+### Defensive Programming and Error Messages
 
 Defensive programming is required. Your program should check all parameters, error-codes, etc. before it trusts them. In general, there should be no circumstances in which your C program will core dump, hang indefinitely, or prematurely terminate. Therefore, your program must respond to all input in a reasonable manner; by "reasonable", we mean print the error message (as specified in the next paragraph) and either continue processing or exit, depending upon the situation.
 
@@ -230,11 +230,11 @@ Your shell should also be able to handle the following scenarios below, which ar
 
 All of these requirements will be tested extensively.
 
-##Hints
+## Hints
 
 Writing your shell in a simple manner is a matter of finding the relevant library routines and calling them properly. To simplify things for you in this assignment, we will suggest a few library routines you may want to use to make your coding easier. (Do not expect this detailed of advice for future assignments!) You are free to use these routines if you want or to disregard our suggestions. To find information on these library routines, look at the manual pages (using the Unix command man ).
 
-###Basic Shell
+### Basic Shell
 
 Parsing: For reading lines of input, you may want to look at `fgets()`. To open a file and get a handle with type `FILE *` , look into `fopen()`. Be sure to check the return code of these routines for errors! (If you see an error, the routine `perror()` is useful for displaying the problem. But do not print the error message from perror() to the screen. You should only print the one and only error message that we have specified above). You may find the `strtok()` routine useful for parsing the command line (i.e., for extracting the arguments within a command separated by whitespace or a tab or ...). Some have found `strchr()` useful as well.
 
@@ -256,13 +256,13 @@ then argv[0] = "foo", argv[1] = "205" and argv[2] = "535".
 
 Important: the list of arguments must be terminated with a NULL pointer; that is, argv[3] = NULL. We strongly recommend that you carefully check that you are constructing this array correctly!
 
-###Built-in Commands
+### Built-in Commands
 
 For the exit built-in command, you should simply call `exit()`. The corresponding process will exit, and the parent (i.e. your shell) will be notified.
 
 For managing the current working directory, you should use `getenv`, `chdir`, and `getcwd` . The `getenv()` call is useful when you want to go to your HOME directory. You do not have to manage the PWD environment variable. `getcwd()` system call is useful to know the current working directory; i.e. if a user types pwd, you simply call getcwd(). And finally, `chdir()` is useful for moving directories. For more details, read the Advanced UNIX Programming book Chapter 4.22 and 7.9 .
 
-###Redirection
+### Redirection
 
 Redirection is relatively easy to implement: just use `close()` on stdout and then `open()` on a file. You can also use `dup2()` system call which is safe for concurrency. 
 
@@ -272,7 +272,7 @@ To work on a file descriptor, you should use `open()`, `read()`, and `write()` s
 
 The idea of redirection is to make the stdout descriptor point to your output file descriptor. First of all, let's understand the `STDOUT_FILENO` file descriptor. When a command `ls -la /tmp` runs, the `ls` program prints its output to the screen. But obviously, the `ls` program does not know what a screen is. All it knows is that the screen is basically pointed by the `STDOUT_FILENO` file descriptor. In other words, you could rewrite `printf("hi")` in this way: `write(STDOUT_FILENO, "hi", 2)`.
 
-###Miscellaneous Hints
+### Miscellaneous Hints
 
 Remember to get the basic functionality of your shell working before worrying about all of the error conditions and end cases. For example, first get a single command running (probably first a command with no arguments, such as "ls"). Then try adding more arguments.
 
@@ -284,9 +284,9 @@ Beat up your own code! You are the best (and in this case, the only) tester of t
 
 Keep versions of your code. More advanced programmers will use a source control system such as [git](https://git-scm.com/). Minimally, when you get a piece of functionality working, make a copy of your .c file (perhaps a subdirectory with a version number, such as v1, v2, etc.). By keeping older, working versions around, you can comfortably work on adding new functionality, safe in the knowledge you can always go back to an older, working version if need be.
 
-##Bonus
+## Bonus
 
-###Pipe
+### Pipe
 
 Another important feature of a real world shell is **pipe** (represented by "|"), which connects the output of one process to the input of another process. For example, the following will calculate how many times the string "hello" occurs in file "tmp":
 
@@ -319,7 +319,7 @@ Then the output is 2. Can you figure out how it works?
 
 To integrate pipe in your mysh, the idea is quite similar to redirection: you need to bind file descriptors  `STDIN_FILENO` and `STDOUT_FILENO` properly before running a command. One key system call is `pipe()` which kindly creates the pipe for you (happy, yeah!). Again, details of `pipe` can be found in the man page, and also section 15.2 of Advanced UNIX Programming book. Read them, call `pipe()`, revisit redirection, make your pipe rock.
 
-##Hand In
+## Hand In
 
 To ensure that we compile your C correctly for the demo, you will need to create a simple makefile; this way our scripts can just run make to compile your code with the right libraries and flags. If you don't know how to write a makefile, you might want to look at the man pages for make or better yet, read the tutorial.
 
@@ -342,7 +342,7 @@ If you want to get the bonus, you also need to hand in
 
 Do not submit any .o files. Make sure that your code runs correctly on Linux machines.
 
-##Grading
+## Grading
 
 We will run your program on a suite of test cases, some of which will exercise your programs ability to correctly execute commands and some of which will test your programs ability to catch error conditions. Be sure that you thoroughly exercise your program's capabilities on a wide range of test suites, so that you will not be unpleasantly surprised when we run our tests.
 

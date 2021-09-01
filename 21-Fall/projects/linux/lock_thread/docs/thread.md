@@ -1,14 +1,14 @@
-#Project 4: Locks and Threads
+# Project 4: Locks and Threads
 
-##Overview
+## Overview
 
 In this project, you will be getting a feel for threads, locks, and performance. The first entity you will build is called a spin lock. A spin lock uses some kind of powerful hardware instruction in order to provide mutual exclusion among threads. Then, you may be not satisfied with performances of the simple spin lock, and step further to develop a mutex. With locks in hand, you can build thread-safe versions of three common data structures: counter, list and hash table. Finally, you will try to make a nice report by comparing different lock implementations and  concurrency levels. Ready? Welcome to parallel universes!
 
-##Readings
+## Readings
 
 OSTEP [Chapter 27](http://pages.cs.wisc.edu/~remzi/OSTEP/threads-api.pdf), [Chapter 28](http://pages.cs.wisc.edu/~remzi/OSTEP/threads-locks.pdf), [Chapter 29](http://pages.cs.wisc.edu/~remzi/OSTEP/threads-locks-usage.pdf).
 
-##Part 1: Spin Locks
+## Part 1: Spin Locks
 
 To build a spin lock, you will use the x86 exchange primitive. As this is an assembly instruction, you will need be able to call it from C. Fortunately, gcc conveniently lets you do this without too much trouble: [xchg.c](../src/xchg.c).
 
@@ -25,7 +25,7 @@ spinlock_release(spinlock_t *lock)
 
 These routine(s) should use the xchg code above as needed to build your spin lock.
 
-##Part 2: Mutex
+## Part 2: Mutex
 
 Mutex is another implementation of a lock which causes threads to sleep rather than spin when the lock is unavailable. Linux provides the system calls named *futex* for this purpose. Want to know details? Go and read its man page.
 
@@ -45,7 +45,7 @@ mutex_release(mutex_t *lock)
 Hint: starting from the simplest one and refining your mutex step by step.
 
 
-##Part 3: Using Your Lock
+## Part 3: Using Your Lock
 
 Next, you will use your locks to build three concurrent data structures. The three data structures you will build are a thread-safe counter, list, and hash table.
 
@@ -83,7 +83,7 @@ void *hash_lookup(hash_t *hash, unsigned int key);
 The only difference from the list interface is that the user can specify the number of buckets in the hash table. Each bucket should basically contain a list upon which to store elements. This library will be called `libhash.so`
 The hash table should simply use one list per bucket. How can you make sure to allow as much concurrency as possible during accesses to the hash table?
 
-##Part 4: Comparing Performance
+## Part 4: Comparing Performance
 
 Finally, you will write up a report on some performance comparison experiments. Specifically, you will 
 
@@ -118,7 +118,7 @@ Timing should be done with `gettimeofday()`. Read the man page for details. One 
 
 To make your graph less noisy, you will have to run multiple iterations, as well as to make sure to let each experiment run long enough so as to be meaningful. You might then plot the average (as done above) and even a standard deviation.
 
-##Hand In
+## Hand In
 
 * Source files (.c, .h) of your locks and three libraries (counter, hash, and list)
 * Makefile which builds each of the libraries

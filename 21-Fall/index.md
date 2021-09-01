@@ -1,15 +1,15 @@
-#Operating System Labs
+# Operating System Labs
 
-Dept. of Computer Science, ECNU, Fall 2020
+Dept. of Computer Science, ECNU, Fall 2021
 
-##Basic 
+## Basic 
 
-###Time and Venue
+### Time and Venue
 
 * Lectures: &nbsp;  Monday 8:00am - 9:35am @ 教书院 413
 * Labs: &nbsp; Monday 9:50am - 11:25am @ 理科楼 B519 
 
-###Stuff
+### Stuff
 
 Instructor: &nbsp; Yuanbin Wu  
 Email: &nbsp; ybwu\[at\]cs.ecnu.edu.cn  
@@ -25,39 +25,39 @@ Email: &nbsp; 10185102223\[at\]stu.ecnu.edu.cn
 
 
 
-##Projects
+## Projects
 
 
-###Name Your Projects
+### Name Your Projects
 StudentNumber_Name_LabX.zip (e.g., 10195110001_李明_Lab0.zip)
 
 
-###Submit Your Projects
+### Submit Your Projects
 oslab2020\[at\]163.com  
 **Please check the email address carefully (your TA has a sad story on this &#129296;).**
 
 
-###Topics
+### Topics
 
 * Project 0: 
-  - 0a [Get familiar with Linux](projects/linux_warmup/docs/linux_warmup.html)
-  - 0b [Sorting](projects/sorting/docs/sort.html)
+  - 0a [Get familiar with Linux](projects/linux/linux_warmup/docs/linux_warmup.md)
+  - 0b [Sorting](projects/linux/sorting/docs/sort.md)
 
 * Project 1: 
-  - 1a [A Unix Shell](projects/myshell/docs/shell.html)
-  - 1b [xv6 System Call](projects/xv6/system_call/docs/xv6_intro.html)
+  - 1a [A Unix Shell](projects/linux/myshell/docs/shell.md)
+  - 1b [xv6 System Call](projects/xv6/system_call/docs/xv6_intro.md)
 
 * Project 2: 
-  - 2a [Dynamic Memory Allocation](projects/malloc/docs/malloc.html)
-  - 2b [xv6 Scheduling](projects/xv6/scheduling/docs/xv6_mlfq.html)
+  - 2a [Dynamic Memory Allocation](projects/linux/malloc/docs/malloc.md)
+  - 2b [xv6 Scheduling](projects/xv6/scheduling/docs/xv6_mlfq.md)
 
 * Project 3: 
-  - 3a [Locks and Threads](projects/lock_thread/docs/thread.html)
-  - 3b [xv6 VM Layout](projects/xv6/vmlayout/docs/xv6_vmlayout.html)
+  - 3a [Locks and Threads](projects/linux/lock_thread/docs/thread.md)
+  - 3b [xv6 VM Layout](projects/xv6/vmlayout/docs/xv6_vmlayout.md)
 
 * Project 4: 
-  - 4a [File Defragmentation](projects/defragmentation/docs/defragmentation.html)
-  - 4b [xv6 Kernel Thread](projects/xv6/thread/docs/xv6_thread.html)
+  - 4a [File Defragmentation](projects/linux/defragmentation/docs/defragmentation.md)
+  - 4b [xv6 Kernel Thread](projects/xv6/thread/docs/xv6_thread.md)
 
 <!--
 -->
@@ -69,7 +69,7 @@ oslab2020\[at\]163.com
 - Notes: For all xv6 projects, we start from a clean version of xv6 kernel (i.e., projects are independet with each other). 
 - [install instrucions (lab machines)](slides/qemu-lab-install.pdf)
 
-###Lecture Slides
+### Lecture Slides
 
 * [Lecture 1](slides/lecture-1.pdf), [Intro Part1](slides/part1.pdf) 
 [Part2](slides/part2.pdf)
@@ -83,16 +83,16 @@ oslab2020\[at\]163.com
 -->
 
 
-###Timeline (tentative)
+### Timeline (tentative)
 
 ![](images/timeline.png)
 
-###Plagiarism Policy
+### Plagiarism Policy
 
 **ALL** participants will loss **ALL** credits of the project 
 if any improper code/doc sharing is discovered.
 
-###Late Policy
+### Late Policy
 
 * For P0, P1, late handins will NOT be accepted.
 * For P2, P3, P4:
@@ -101,7 +101,7 @@ if any improper code/doc sharing is discovered.
     - If all your 3 “late days” are used, late handins will not be accepted.
 
 
-##Readings
+## Readings
 
 **Main**
 

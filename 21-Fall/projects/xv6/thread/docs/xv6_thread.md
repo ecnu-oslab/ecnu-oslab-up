@@ -45,7 +45,7 @@ One thing you need to be careful with is when an address space is grown by a thr
 
 Have fun!
 
-##Hints
+## Hints
 
 It might be good to read the xv6 book a bit.
 
