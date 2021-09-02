@@ -22,27 +22,27 @@ Email: &nbsp; 51215901009\[at\]stu.ecnu.edu.cn
 TA2: &nbsp; Jie Wang  
 Email: &nbsp; 10185102223\[at\]stu.ecnu.edu.cn
 
+### Submission
+
+We will rely on [Github Classroom](https://classroom.github.com/) to manage assignments.
+To submit projects, please 
+  - first get a [github](www.github.com) account.
+  - for each project, click ``invite link`` to accept the project assignment 
+(you may be required to link your github account to your student number when accepting the first project).
+  - after accepting, a repository is created for your project, and you (for individual project) or your group (for group project) will develop the project in this repository.
+  - when a project's deadline is passed, TAs grade your project based on the last commit before the deadline.
 
 
 
 ## Projects
 
-
-### Name Your Projects
-StudentNumber_Name_LabX.zip (e.g., 10195110001_李明_Lab0.zip)
-
-
-### Submit Your Projects
-oslab2020\[at\]163.com  
-**Please check the email address carefully (your TA has a sad story on this &#129296;).**
-
-
 ### Topics
 
 * Project 0: 
-  - 0a [Get familiar with Linux](projects/linux/linux_warmup/docs/linux_warmup.md)
-  - 0b [Sorting](projects/linux/sorting/docs/sort.md)
+  - 0a Get familiar with Linux [docs](projects/linux/linux_warmup/docs/linux_warmup.md), [invite link]()
+  - 0b Sorting [docs](projects/linux/sorting/docs/sort.md), [invite link]()
 
+<!--
 * Project 1: 
   - 1a [A Unix Shell](projects/linux/myshell/docs/shell.md)
   - 1b [xv6 System Call](projects/xv6/system_call/docs/xv6_intro.md)
@@ -59,7 +59,6 @@ oslab2020\[at\]163.com
   - 4a [File Defragmentation](projects/linux/defragmentation/docs/defragmentation.md)
   - 4b [xv6 Kernel Thread](projects/xv6/thread/docs/xv6_thread.md)
 
-<!--
 -->
 
 ### Downloads  
@@ -73,19 +72,19 @@ oslab2020\[at\]163.com
 
 * [Lecture 1](slides/lecture-1.pdf), [Intro Part1](slides/part1.pdf) 
 [Part2](slides/part2.pdf)
+<!--
 * [Lecture 2](slides/lecture-2.pdf)
 * [Lecture 3](slides/lecture-3.pdf)
 * [Lecture 4](slides/lecture-4.pdf)
 * [Lecture 5](slides/lecture-5.pdf)
 * [Lecture 6](slides/lecture-6.pdf)
 * [Lecture 7](slides/lecture-7.pdf)
-<!--
 -->
 
 
 ### Timeline (tentative)
 
-![](images/timeline.png)
+![timeline](images/timeline.png)
 
 ### Plagiarism Policy
 
