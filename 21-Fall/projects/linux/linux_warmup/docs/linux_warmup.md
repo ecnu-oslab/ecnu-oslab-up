@@ -154,7 +154,7 @@ age 21 30
 * Set breakpoints around important statements (e.g., loop, if) 
 * Print out values of variables (e.g., loop variables, contents of pointers).
 
-##Hand In 
+## Hand In 
 
 * The two script files `s1.sh` and `s2.sh`.
 * The source file set_operation.c after debugging.
