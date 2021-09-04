@@ -84,7 +84,7 @@ To submit projects, please
 
 ### Timeline (tentative)
 
-![timeline](images/timeline.png)
+ ![timeline](images/timeline.png)
 
 ### Plagiarism Policy
 
