@@ -38,9 +38,11 @@ To submit projects, please
 
 ### Topics
 
-* Project 0: 
-  - 0a Get familiar with Linux [docs](projects/linux/linux_warmup/docs/linux_warmup.md), [invite link]()
-  - 0b Sorting [docs](projects/linux/sorting/docs/sort.md), [invite link]()
+* Project 0a [Get familiar with Linux](projects/linux/linux_warmup/docs/linux_warmup.md), 
+[invite link](https://classroom.github.com/a/fjsA2ARW)
+
+* Project 0b [Sorting](projects/linux/sorting/docs/sort.md), 
+[invite link](https://classroom.github.com/a/wK8pdx4l)
 
 <!--
 * Project 1: 
@@ -70,8 +72,7 @@ To submit projects, please
 
 ### Lecture Slides
 
-* [Lecture 1](slides/lecture-1.pdf), [Intro Part1](slides/part1.pdf) 
-[Part2](slides/part2.pdf)
+* [Lecture 1](slides/lecture-1.pdf), 
 <!--
 * [Lecture 2](slides/lecture-2.pdf)
 * [Lecture 3](slides/lecture-3.pdf)
@@ -80,6 +81,11 @@ To submit projects, please
 * [Lecture 6](slides/lecture-6.pdf)
 * [Lecture 7](slides/lecture-7.pdf)
 -->
+
+
+### Lab Slides
+* [Lab1 slides](slides/part1.pdf) 
+
 
 
 ### Timeline (tentative)
