@@ -159,11 +159,12 @@ A correct (bug-free) output should be:
 
 - The four script files **info.sh** , **myls.sh** , **find.sh** and **dbg.sh**
 - The source file **set_operation.c** after debugging.
-- A lab report contains:
+- A lab report **README.md** contains:
     - A simple introduction of your project 
     - For part 1, explain the shell commands in your scripts (e.g., usage, options).
     - For part 2, explain the meaning of gcc options for compiling your program. Explain the detailed process of debugging (where are your breakpoints located, which variables you've watched, etc.) and the bugs you found.
-- Keep your report concise and neat. An extremely verbose report (say 20 pages) will not be accepted.
+    - Try to use **Typora** if you are new to markdown. You can also use other formats like doc or pdf, but they are not recommended.
+- Keep your report concise and neat. An extremely verbose report will NOT be accepted.
 
 ## General Advice
 
