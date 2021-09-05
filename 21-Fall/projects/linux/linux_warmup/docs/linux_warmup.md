@@ -3,14 +3,12 @@
 
 ## Objective
 
-This project is to help you getting familiar with Linux, which
-is, in fact, the operating system in the course title **Operating System Labs**. 
-We only cover several topics,
-but highly recommend you to play with it as much as possible.
+This project will help you getting familiar with Linux.
+We will try to cover those most related topics to labs.
+However, mastering \*nix requires years of practice,
+thus we also encourage you to play with it as much as possible.
 
 >"For the things we have to learn before we can do them, we learn by doing them."
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 >― Aristotle, The Nicomachean Ethics
@@ -18,13 +16,10 @@ but highly recommend you to play with it as much as possible.
 
 
 ## Overview
-The project contains two subparts.
+The project contains two parts,
+- In part 1, you will learn basic commands (cd, cp, ...) and concepts (redirection, pipe, ...) of shell.
+- In part 2, you will practice with Linux C programming environment (gcc compiler, gdb debugger, text editors).
 
-In part 1, you will write shell scripts to accomplish simple tasks. Understanding some basic shell commands (cd, cp, ...) and concepts (redirection, pipe ...) might be helpful.
-
-In part 2, you will practice with Linux C programming environment (gcc compiler, gdb debugger, text editors).
-
-Finally, you can try some advanced text processing tools in bonus problems.
 
 ## Readings
 
@@ -33,7 +28,7 @@ OSTEP [Lab Tutorial](http://pages.cs.wisc.edu/~remzi/OSTEP/lab-tutorial.pdf)
 ## Program Specifications
 
 ### Part 1
-You need to write four shell scripts, both of them should be executable in a Linux shell.
+You need to write four shell scripts, all of them should be executable in a Linux shell.
 
 **info.sh**
 
