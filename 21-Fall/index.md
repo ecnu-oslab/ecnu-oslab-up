@@ -84,7 +84,7 @@ To submit projects, please
 
 
 ### Lab Slides
-* [Lab1 slides](slides/part1.pdf) 
+* [Lab1par1](slides/lab1part1.pdf) ,   [Lab1part2](slides/lab1part2.pdf)
 
 
 
@@ -127,5 +127,4 @@ if any improper code/doc sharing is discovered.
 
 * Linux Kernel Development,  
   Robert Love
-
 
