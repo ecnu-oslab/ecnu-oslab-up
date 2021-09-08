@@ -109,7 +109,7 @@ Try to report how many runs it took for the script to fail. You can report that 
 
 We have a C program [set_operation.c](../src/set_operation.c), which contains several implementation bugs. You will first try to compile/run the program, then detect and correct the bugs using the gdb debugger. 
 
-- set_operation.c computes $(A-B)\cup(B-A)$, where $A$ and $B$ are two sets input by users.
+- set_operation.c computes <img src="https://render.githubusercontent.com/render/math?math=(A-B)\cup(B-A)"> , where <img src="https://render.githubusercontent.com/render/math?math=A"> and <img src="https://render.githubusercontent.com/render/math?math=B"> are two sets input by users.
 - The algorithm is simple:
   - copy $A$ to a temporary set $A_2$
   - compute $A=A-B$ and $B=B-A_2$
