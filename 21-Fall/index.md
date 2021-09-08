@@ -84,7 +84,7 @@ To submit projects, please
 
 
 ### Lab Slides
-* [Lab1par1](slides/lab1part1.pdf) ,   [Lab1part2](slides/lab1part2.pdf)
+* [Lab1part1](slides/lab1part1.pdf) ,   [Lab1part2](slides/lab1part2.pdf)
 
 
 
