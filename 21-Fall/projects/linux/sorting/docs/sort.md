@@ -43,7 +43,7 @@ Another useful tool is [dump.c](../src/dump.c). This program can be used to dump
 
 ## Hints
 
-In your sorting program, you shall use system calls (`open()`, `read()`, `write()`, `close()`, etc.), rather than standard library functions(`fopen()`, `fclos()`). See `generate.c` or `dump.c`.
+In your sorting program, you shall use system calls (`open()`, `read()`, `write()`, `close()`, etc.), rather than standard library functions(`fopen()`, `fclose()`). See `generate.c` or `dump.c`.
 
 If you need to know the size of an input file, `stat()` or `fstat()` could help.
 
@@ -53,14 +53,14 @@ To exit, call `exit()` with a single argument. This argument to `exit()` is then
 
 The routine `malloc()` is useful for memory allocation. Make sure to exit cleanly if malloc fails!
 
-If you don't know how to use these functions, use the man pages. For example, typing man qsort at the command line will give you a lot of information on how to use the library sorting routine.
+If you don't know how to use these functions, use the man pages. For example, typing `man qsort` at the command line will give you a lot of information on how to use the library sorting routine.
 
 ## Assumptions and Errors
 
 * *32-bit integer range*. You may assume that the keys are unsigned 32-bit integers.
 * File length: May be pretty long! However, there is no need to implement a fancy two-pass sort or anything like that; the data set will fit into memory.
 * *Invalid files*: If the user specifies an input or output file that you cannot open (for whatever reason), the sort should EXACTLY print: `Error: Cannot open file foo\n`, with no extra spaces (if the file was named `foo`) and then exit.
-* *Too few or many arguments passed to program*: If the user runs fastsort without any arguments, or in some other way passes incorrect flags and such to fastsort, print `Usage: fastsort inputfile outputfile` and exit.
+* *Too few or many arguments passed to program*: If the user runs `fastsort` without any arguments, or in some other way passes incorrect flags and such to `fastsort`, print `Usage: fastsort inputfile outputfile` and exit.
 
 **Important**: On any error code, you should print the error to the screen using `fprintf()`, and send the error message to `stderr` (standard error) and **not** `stdout` (standard output). This is accomplished in your C code as follows:
 
