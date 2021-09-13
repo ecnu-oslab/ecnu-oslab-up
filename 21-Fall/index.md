@@ -73,8 +73,8 @@ To submit projects, please
 ### Lecture Slides
 
 * [Lecture 1](slides/lecture-1.pdf), 
-<!--
 * [Lecture 2](slides/lecture-2.pdf)
+<!--
 * [Lecture 3](slides/lecture-3.pdf)
 * [Lecture 4](slides/lecture-4.pdf)
 * [Lecture 5](slides/lecture-5.pdf)
