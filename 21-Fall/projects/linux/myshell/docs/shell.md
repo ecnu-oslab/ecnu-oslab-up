@@ -1,9 +1,5 @@
 # Project 1a: A Unix Shell
 
-## Updates
-
-* [here](../../../resources/pj2_test_samples.zip) are some test cases for your shell.
-
 ## Objectives
 
 There are three objectives to this assignment:
@@ -56,12 +52,12 @@ The formats for these build-in command are:
 [optionalSpace]cd[oneOrMoreSpace]dir[optionalSpace]
 [optionalSpace]wait[optionalSpace]
 ```
- 
-When you run `cd` (without arguments), your shell should change the working directory to the path stored in the \$HOME environment variable. Use `getenv("HOME")` to obtain this.
 
-You do not have to support tilde (~). Although in a typical Unix shell you could go to a user's directory by typing "cd ~username", in this project you do not have to deal with tilde. You should treat it like a common character, i.e. you should just pass the whole word (e.g. "~username") to `chdir()`, and chdir will return error.
+When you run `cd` (without arguments), your shell should change the working directory to the path stored in the `$HOME` environment variable. Use `getenv("HOME")` to obtain this.
 
-Basically, when a user types pwd, you simply call `getcwd()`. When a user changes the current working directory (e.g. `cd somepath`), you simply call `chdir()`. Hence, if you run your shell, and then run pwd, it should look like this:
+You do not have to support tilde (~). Although in a typical Unix shell you could go to a user's directory by typing `cd ~username`, in this project you do not have to deal with tilde. You should treat it like a common character, i.e. you should just pass the whole word (e.g. "~username") to `chdir()`, and chdir will return error.
+
+Basically, when a user types `pwd`, you simply call `getcwd()`. When a user changes the current working directory (e.g. `cd somepath`), you simply call `chdir()`. Hence, if you run your shell, and then run `pwd`, it should look like this:
 
 ```shell
 % cd
@@ -73,7 +69,7 @@ Basically, when a user types pwd, you simply call `getcwd()`. When a user change
 mysh> pwd 
 /home/username 
 ```
- 
+
 ### Redirection
 
 Many times, a shell user prefers to send the output of his/her program to a file rather than to the screen. The shell provides this nice feature with the ">" character. Formally this is named as redirection of standard output. To make your shell users happy, your shell should also include this feature.
@@ -89,7 +85,7 @@ ls > out1 out2
 ls > out1 out2 out3
 ls > out1 > out2
 ```
- 
+
 ### Background Jobs
 
 Sometimes, when using a shell, you want to be able to run multiple jobs concurrently. In most shells, this is implemented by letting you put a job in the "background". This is done as follows:
@@ -123,7 +119,7 @@ The one and only error message. A section about the Error Message has been added
 char error_message[30] = "An error has occurred\n";
 write(STDERR_FILENO, error_message, strlen(error_message));
 ```
- 
+
 The error message should be printed to **stderr** (standard error). Also, do not add whitespaces or tabs or extra error messages.
 
 There is a difference between errors that your shell catches and those that the program catches. Your shell should catch all the syntax errors specified in this project page. If the syntax of the command looks perfect, you simply run the specified program. If there is any program-related errors (e.g. invalid arguments to ls when you run it, for example), let the program prints its specific error messages in any manner it desires (e.g. could be stdout or stderr).
@@ -137,7 +133,7 @@ mysh> ls
 mysh> ls > a
 mysh> ls>a
 ```
- 
+
 ### Batch Mode
 
 So far, you have run the shell in interactive mode. Most of the time, testing your shell in interactive mode is time-consuming. To make testing much faster, your shell should support batch mode .
@@ -149,7 +145,7 @@ In batch mode, you should not display a prompt. You should print each line you r
 ```C
 write(STDOUT_FILENO, cmdline, strlen(cmdline));
 ```
- 
+
 In both interactive and batch mode, your shell should terminates when it sees the exit command on a line or reaches the end of the input stream (i.e., the end of the batch file).
 
 To run the batch mode, your C program must be invoked exactly as follows: 
@@ -173,7 +169,7 @@ some output printed here
 mysh> notACommand
 some error printed here 
 ```
- 
+
 then you could cut your testing time by putting the same input lines to a batch file (for example my_batch_file):
 
 ```
@@ -181,13 +177,13 @@ ls
 ls > /tmp/ls-out
 notACommand
 ```
- 
+
 and run your shell in batch mode:
 
 ```shell
 prompt> ./mysh my_batch_file
 ```
- 
+
 In this example, the output of the batch mode should look like this:
 
 ```
@@ -198,8 +194,8 @@ some output printed here
 notACommand
 some error printed here 
 ```
- 
-Important Note: To automate grading, we will heavily use the batch mode . If you do everything correctly except the batch mode, you could be in trouble. Hence, make sure you can read and run the commands in the batch file. Soon, we will provide some batch files for you to test your program.
+
+Important Note: To automate grading, we will heavily use the batch mode . If you do everything correctly except the batch mode, you could be in trouble. Hence, make sure you can read and run the commands in the batch file. We will provide some batch files for you to test your program.
 
 ### Defensive Programming and Error Messages
 
@@ -211,7 +207,7 @@ Since your code will be graded with automated testing, you should print this one
 char error_message[30] = "An error has occurred\n";
 write(STDERR_FILENO, error_message, strlen(error_message));
 ```
- 
+
 For this project, the error message should be printed to `stderr`. Also, do not attempt to add whitespaces or tabs or extra error messages.
 
 You should consider the following situations as errors; in each case, your shell should print the error message to stdout stderr and exit gracefully:
@@ -232,15 +228,15 @@ All of these requirements will be tested extensively.
 
 ## Hints
 
-Writing your shell in a simple manner is a matter of finding the relevant library routines and calling them properly. To simplify things for you in this assignment, we will suggest a few library routines you may want to use to make your coding easier. (Do not expect this detailed of advice for future assignments!) You are free to use these routines if you want or to disregard our suggestions. To find information on these library routines, look at the manual pages (using the Unix command man ).
+Writing your shell in a simple manner is a matter of finding the relevant library routines and calling them properly. To simplify things for you in this assignment, we will suggest a few library routines you may want to use to make your coding easier. (Do not expect this detailed of advice for future assignments!) You are free to use these routines if you want or to disregard our suggestions. To find information on these library routines, look at the manual pages (using the Unix command `man `).
 
 ### Basic Shell
 
-Parsing: For reading lines of input, you may want to look at `fgets()`. To open a file and get a handle with type `FILE *` , look into `fopen()`. Be sure to check the return code of these routines for errors! (If you see an error, the routine `perror()` is useful for displaying the problem. But do not print the error message from perror() to the screen. You should only print the one and only error message that we have specified above). You may find the `strtok()` routine useful for parsing the command line (i.e., for extracting the arguments within a command separated by whitespace or a tab or ...). Some have found `strchr()` useful as well.
+Parsing: For reading lines of input, you may want to look at `fgets()`. To open a file and get a handle with type `FILE *` , look into `fopen()`. Be sure to check the return code of these routines for errors! (If you see an error, the routine `perror()` is useful for displaying the problem. But do not print the error message from `perror()` to the screen. You should only print the one and only error message that we have specified above). You may find the `strtok()` routine useful for parsing the command line (i.e., for extracting the arguments within a command separated by whitespace or a tab or ...). Some have found `strchr()` useful as well.
 
 Executing Commands: Look into `fork` , `execvp` , and `wait`/`waitpid` . See the UNIX man pages for these functions, and also read the Advance Programming in the UNIX Environment, Chapter 8 (specifically, 8.1, 8.2, 8.3, 8.6, 8.10). Before starting this project, you should definitely play around with these functions.
 
-You will note that there are a variety of commands in the exec family; for this project, you must use `execvp` . You should **not** use the `system()` call to run a command. Remember that if execvp() is successful, it will not return; if it does return, there was an error (e.g., the command does not exist). The most challenging part is getting the arguments correctly specified. The first argument specifies the program that should be executed, with the full path specified; this is straight-forward. The second argument, char \*argv[] matches those that the program sees in its function prototype:
+You will note that there are a variety of commands in the exec family; for this project, you must use `execvp` . You should **not** use the `system()` call to run a command. Remember that if `execvp()` is successful, it will not return; if it does return, there was an error (e.g., the command does not exist). The most challenging part is getting the arguments correctly specified. The first argument specifies the program that should be executed, with the full path specified; this is straight-forward. The second argument, `char *argv[]` matches those that the program sees in its function prototype:
 
 ```C
 int main(int argc, char *argv[]);
@@ -260,11 +256,11 @@ Important: the list of arguments must be terminated with a NULL pointer; that is
 
 For the exit built-in command, you should simply call `exit()`. The corresponding process will exit, and the parent (i.e. your shell) will be notified.
 
-For managing the current working directory, you should use `getenv`, `chdir`, and `getcwd` . The `getenv()` call is useful when you want to go to your HOME directory. You do not have to manage the PWD environment variable. `getcwd()` system call is useful to know the current working directory; i.e. if a user types pwd, you simply call getcwd(). And finally, `chdir()` is useful for moving directories. For more details, read the Advanced UNIX Programming book Chapter 4.22 and 7.9 .
+For managing the current working directory, you should use `getenv`, `chdir`, and `getcwd` . The `getenv()` call is useful when you want to go to your HOME directory. You do not have to manage the `PWD` environment variable. `getcwd()` system call is useful to know the current working directory; i.e. if a user types `pwd`, you simply call `getcwd()`. And finally, `chdir()` is useful for moving directories. For more details, read the Advanced UNIX Programming book Chapter 4.22 and 7.9 .
 
 ### Redirection
 
-Redirection is relatively easy to implement: just use `close()` on stdout and then `open()` on a file. You can also use `dup2()` system call which is safe for concurrency. 
+Redirection is relatively easy to implement: just use `close()` on stdout and then `open()` on a file. You can also use `dup2()` system call which is safe for concurrency.
 
 With file descriptor, you can perform read and write to a file. Maybe in your life so far, you have only used `fopen()`, `fread()`, and `fwrite()` for reading and writing to a file. Unfortunately, these functions work on `FILE*` , which is more of a C library support; the file descriptors are hidden.
 
@@ -274,15 +270,15 @@ The idea of redirection is to make the stdout descriptor point to your output fi
 
 ### Miscellaneous Hints
 
-Remember to get the basic functionality of your shell working before worrying about all of the error conditions and end cases. For example, first get a single command running (probably first a command with no arguments, such as "ls"). Then try adding more arguments.
+Remember to get the basic functionality of your shell working before worrying about all of the error conditions and end cases. For example, first get a single command running (probably first a command with no arguments, such as `ls`). Then try adding more arguments.
 
-Next, try working on multiple commands. Make sure that you are correctly handling all of the cases where there is miscellaneous white space around commands or missing commands. Finally, you add built-in commands and redirection suppors.
+Next, try working on multiple commands. Make sure that you are correctly handling all of the cases where there is miscellaneous white space around commands or missing commands. Finally, you add built-in commands and redirection supports.
 
 We strongly recommend that you check the return codes of all system calls from the very beginning of your work. This will often catch errors in how you are invoking these new system calls. And, it's just good programming sense.
 
 Beat up your own code! You are the best (and in this case, the only) tester of this code. Throw lots of junk at it and make sure the shell behaves well. Good code comes through testing -- you must run all sorts of different tests to make sure things work as desired. Don't be gentle -- other users certainly won't be. Break it now so we don't have to break it later.
 
-Keep versions of your code. More advanced programmers will use a source control system such as [git](https://git-scm.com/). Minimally, when you get a piece of functionality working, make a copy of your .c file (perhaps a subdirectory with a version number, such as v1, v2, etc.). By keeping older, working versions around, you can comfortably work on adding new functionality, safe in the knowledge you can always go back to an older, working version if need be.
+Keep versions of your code. More advanced programmers will use a source control system such as [git](https://git-scm.com/). Minimally, when you get a piece of functionality working, make a copy of your `.c` file (perhaps a subdirectory with a version number, such as v1, v2, etc.). By keeping older, working versions around, you can comfortably work on adding new functionality, safe in the knowledge you can always go back to an older, working version if need be.
 
 ## Bonus
 
@@ -319,6 +315,10 @@ Then the output is 2. Can you figure out how it works?
 
 To integrate pipe in your mysh, the idea is quite similar to redirection: you need to bind file descriptors  `STDIN_FILENO` and `STDOUT_FILENO` properly before running a command. One key system call is `pipe()` which kindly creates the pipe for you (happy, yeah!). Again, details of `pipe` can be found in the man page, and also section 15.2 of Advanced UNIX Programming book. Read them, call `pipe()`, revisit redirection, make your pipe rock.
 
+## Self-testing
+
+[Here](../../../resources/pj2_test_samples.zip) are some test cases for your shell.
+
 ## Hand In
 
 To ensure that we compile your C correctly for the demo, you will need to create a simple makefile; this way our scripts can just run make to compile your code with the right libraries and flags. If you don't know how to write a makefile, you might want to look at the man pages for make or better yet, read the tutorial.
@@ -329,18 +329,18 @@ The name of your final executable should be mysh , i.e. your C program must be i
 % ./mysh
 % ./mysh input_test_tile
 ```
- 
+
 
 The files you submit should include:
 
-* .c souce files
-* A makefile which builds `mysh`
+* .c source files
+* A makefile which builds `mysh` (or just use the example makefile)
 
 If you want to get the bonus, you also need to hand in
 
 * A README file explaining your implementation of pipe 
 
-Do not submit any .o files. Make sure that your code runs correctly on Linux machines.
+DO NOT submit any .o files. Make sure that your code runs correctly on Linux machines.
 
 ## Grading
 
