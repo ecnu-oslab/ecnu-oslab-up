@@ -76,7 +76,7 @@ Many times, a shell user prefers to send the output of his/her program to a file
 
 For example, if a user types `ls -la /tmp > output` , nothing should be printed on the screen. Instead, the output of the ls program should be rerouted to the output file.
 
-If the "output" file already exists before you run your program, you should simple overwrite the file (after truncating it). If the output file is not specified (e.g. `ls > ` ), you should also print an error message.
+If the "output" file already exists before you run your program, you should simple overwrite the file (after truncating it). If the output file is not specified (e.g. `ls >` ), you should also print an error message.
 
 Here are some redirections that should **not** work in `mysh` (however, you can play them in bash to see how bash handle these cases):
 
@@ -228,7 +228,7 @@ All of these requirements will be tested extensively.
 
 ## Hints
 
-Writing your shell in a simple manner is a matter of finding the relevant library routines and calling them properly. To simplify things for you in this assignment, we will suggest a few library routines you may want to use to make your coding easier. (Do not expect this detailed of advice for future assignments!) You are free to use these routines if you want or to disregard our suggestions. To find information on these library routines, look at the manual pages (using the Unix command `man `).
+Writing your shell in a simple manner is a matter of finding the relevant library routines and calling them properly. To simplify things for you in this assignment, we will suggest a few library routines you may want to use to make your coding easier. (Do not expect this detailed of advice for future assignments!) You are free to use these routines if you want or to disregard our suggestions. To find information on these library routines, look at the manual pages (using the Unix command `man`).
 
 ### Basic Shell
 
