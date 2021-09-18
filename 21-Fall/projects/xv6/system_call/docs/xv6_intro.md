@@ -30,7 +30,9 @@ which you can download from here and install with `make`.
 After you have un-tarred the `xv6.tar.gz` file, and compiled xv6 using `make`, 
 you can run `make qemu-nox` to run xv6 using the QEMU emulator. 
 Test out the unmodified code by running a few of the existing user-level applications, 
-like `ls` and `forktest`. To quit the emulator, type `Ctrl-a x`.
+like `ls` and `forktest`. 
+
+To quit the emulator, type `Ctrl-a x`.
 
 ## Your System Call
 
