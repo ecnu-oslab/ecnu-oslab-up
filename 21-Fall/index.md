@@ -45,10 +45,10 @@ To submit projects, please
 [invite link](https://classroom.github.com/a/wK8pdx4l)
 
 * Project 1a [A Unix Shell](projects/linux/myshell/docs/shell.md),
-<!-- [invite link](https://classroom.github.com/a/2ANYvHjH)-->
+[invite link](https://classroom.github.com/a/2ANYvHjH)
 
 * Project 1b [xv6 System Call](projects/xv6/system_call/docs/xv6_intro.md),
-<!-- [invite link](https://classroom.github.com/a/wekVha0B)-->
+[invite link](https://classroom.github.com/a/wekVha0B)
 <!--
 * Project 2: 
   - 2a [Dynamic Memory Allocation](projects/linux/malloc/docs/malloc.md)
