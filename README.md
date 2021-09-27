@@ -1,4 +1,4 @@
-# Welcome to the home of ecnu OS lab repo :rocket:
+# Welcome to the ecnu OS lab course repo
 
 
-## [Fall 2021](21-Fall/index.md)
+## :cow: [Fall 2021](21-Fall/index.md)
