@@ -38,16 +38,16 @@ To submit projects, please
 
 ### Topics
 
-* Project 0a [Get familiar with Linux](projects/linux/linux_warmup/docs/linux_warmup.md), 
+* Project 0a [Get familiar with Linux](../projects/linux/linux_warmup/linux_warmup.md), 
 [invite link](https://classroom.github.com/a/fjsA2ARW)
 
-* Project 0b [Sorting](projects/linux/sorting/docs/sort.md), 
+* Project 0b [Sorting](../projects/linux/sorting/sort.md), 
 [invite link](https://classroom.github.com/a/wK8pdx4l)
 
-* Project 1a [A Unix Shell](projects/linux/myshell/docs/shell.md),
+* Project 1a [A Unix Shell](../projects/linux/myshell/shell.md),
 [invite link](https://classroom.github.com/a/2ANYvHjH)
 
-* Project 1b [xv6 System Call](projects/xv6/system_call/docs/xv6_intro.md),
+* Project 1b [xv6 System Call](../projects/xv6/system_call/xv6_intro.md),
 [invite link](https://classroom.github.com/a/wekVha0B)
 <!--
 * Project 2: 
@@ -66,9 +66,9 @@ To submit projects, please
 
 ### xv6 lab environments
 
-- [How to](resources/xv6env/README.md),
-- [xv6](resources/xv6env/xv6.tar.gz), [qemu](resources/xv6env/qemu-6.828-2.9.0.tar.gz), [Dockerfile](resources/xv6env/Dockerfile)
-- [Troubleshot (lab machines)](slides/qemu-lab-install.pdf)
+- [How to](../xv6env/),
+- [xv6](../xv6env/xv6.tar.gz), [qemu](../xv6env/qemu-6.828-2.9.0.tar.gz), [Dockerfile](../xv6env/Dockerfile)
+- [Troubleshot (lab machines)](../xv6env/qemu-lab-install.pdf)
 
 
 Notes: For all xv6 projects, we start from a clean version of xv6 kernel (i.e., projects are independet with each other). 

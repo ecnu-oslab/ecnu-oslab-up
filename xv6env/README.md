@@ -26,12 +26,10 @@ Here, we take installing qemu as an example of above process.
 
 % cd path/to/the/unzipped/qemu/source/file
 
-
 # we will install qemu binaries in the build directory 
 % mkdir build 
 
 % cd build
-
 
 # configure qemu to only build the i386 simulator and 
 # specify the correct python version.
