@@ -317,7 +317,7 @@ To integrate pipe in your mysh, the idea is quite similar to redirection: you ne
 
 ## Self-testing
 
-[Here](../../../../resources/pj2_test_samples.zip) are some test cases for your shell.
+[Here](pj2_test_samples.zip) are some test cases for your shell.
 
 ## Hand In
 

@@ -1,9 +1,6 @@
 # Project 2b: xv6 Scheduler
 
 
-## Updates
-
-Some test cases can be found [here](../tests/project2btest.tar.gz)
 
 ## Objectives
 
@@ -90,7 +87,14 @@ To be more specific, this system call returns 0 on success and -1 on failure. If
 };
 ```
 
-The file can be seen [here](../src/pstat.h). Do not change the names of the fields in `pstat.h`.
+The file can be seen [here](pstat.h). Do not change the names of the fields in `pstat.h`.
+
+
+## Test cases
+
+Some test cases can be found [here](project2btest.tar.gz).
+
+
 
 ## Tips
 

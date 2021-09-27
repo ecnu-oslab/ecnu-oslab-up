@@ -35,7 +35,7 @@ You will also provide a supporting function, `mem_dump()`, described below; this
 
 ## Program Specifications
 
-For this project, you will be implementing several different routines as part of a shared library. Note that you will not be writing a main() routine for the code that you handin (but you should implement one for your own testing). We have provided the prototypes for these functions in the file [mem.h](../src/mem.h);  you should include this header file in your code to ensure that you are adhering to the specification exactly. **You should not change mem.h in any way!** We now define each of these routines more precisely.
+For this project, you will be implementing several different routines as part of a shared library. Note that you will not be writing a main() routine for the code that you handin (but you should implement one for your own testing). We have provided the prototypes for these functions in the file [mem.h](mem.h);  you should include this header file in your code to ensure that you are adhering to the specification exactly. **You should not change mem.h in any way!** We now define each of these routines more precisely.
 
 * `int mem_init(int size_of_region)`: mem_init is called one time by a process using your routines. `size_of_region` is the number of bytes that you should request from the OS using mmap().
 

@@ -38,16 +38,16 @@ To submit projects, please
 
 ### Topics
 
-* Project 0a [Get familiar with Linux](../projects/linux/linux_warmup/linux_warmup.md), 
+* Project 0a [Get familiar with Linux](../projects/linux/linux_warmup/), 
 [invite link](https://classroom.github.com/a/fjsA2ARW)
 
-* Project 0b [Sorting](../projects/linux/sorting/sort.md), 
+* Project 0b [Sorting](../projects/linux/sorting/), 
 [invite link](https://classroom.github.com/a/wK8pdx4l)
 
-* Project 1a [A Unix Shell](../projects/linux/myshell/shell.md),
+* Project 1a [A Unix Shell](../projects/linux/myshell/),
 [invite link](https://classroom.github.com/a/2ANYvHjH)
 
-* Project 1b [xv6 System Call](../projects/xv6/system_call/xv6_intro.md),
+* Project 1b [xv6 System Call](../projects/xv6/system_call/),
 [invite link](https://classroom.github.com/a/wekVha0B)
 <!--
 * Project 2: 

@@ -89,7 +89,7 @@ After defragmenting, your new disk image should contain:
 * new inodes for the files,
 * data blocks at their new locations.
 
-A sample disk image for you to work with is available at [here](../src/datafile-frag.txt).
+A sample disk image for you to work with is available at [here](datafile-frag.txt).
 
 ## Hints
 

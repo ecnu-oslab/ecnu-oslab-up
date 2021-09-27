@@ -10,7 +10,7 @@ OSTEP [Chapter 27](http://pages.cs.wisc.edu/~remzi/OSTEP/threads-api.pdf), [Chap
 
 ## Part 1: Spin Locks
 
-To build a spin lock, you will use the x86 exchange primitive. As this is an assembly instruction, you will need be able to call it from C. Fortunately, gcc conveniently lets you do this without too much trouble: [xchg.c](../src/xchg.c).
+To build a spin lock, you will use the x86 exchange primitive. As this is an assembly instruction, you will need be able to call it from C. Fortunately, gcc conveniently lets you do this without too much trouble: [xchg.c](xchg.c).
 
 For those interested in learning more about calling assembly from C with gcc, see [here](http://www.ibiblio.org/gferg/ldp/GCC-Inline-Assembly-HOWTO.html) (Note that you may need to add the gcc option `-std=gnu99` since your code is no longer in ansi C).
 
@@ -33,7 +33,7 @@ One difficulty on using futex is that it is a low level lock primitive. The man 
 
 > Bare futexes are not intended as an easy-to-use abstraction for end-users. (There is no wrapper function for this system call in glibc.)
 
-However, we are not end-users, we are locksmiths! To call futex, [sys_futex.c](../src/sys_futex.c) is a wrapper.
+However, we are not end-users, we are locksmiths! To call futex, [sys_futex.c](sys_futex.c) is a wrapper.
 
 Again, the mutex you build should define a `mutex_t` data structure and two routines:
 

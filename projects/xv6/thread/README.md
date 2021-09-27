@@ -1,9 +1,5 @@
 # Project 4b: xv6 Threads
 
-## Updates
-
-Some test cases can be found [here](../tests/project4btest.tar.gz)
-
 
 ## Overview
 
@@ -54,6 +50,12 @@ For preparing stacks for threads
 you need to know a bit about calling convensions of x86.
 The following two links [1](https://en.wikibooks.org/wiki/X86_Disassembly/Functions_and_Stack_Frames
 ), [2](https://en.wikibooks.org/wiki/X86_Disassembly/Calling_Conventions) and the first few chapters of this book ([Programming from the Ground Up](http://download.savannah.gnu.org/releases/pgubook/ProgrammingGroundUp-1-0-booksize.pdf)) might be userful.
+
+
+## Test cases
+
+Some test cases can be found [here](project4btest.tar.gz).
+
 
 
 <div id="footer">

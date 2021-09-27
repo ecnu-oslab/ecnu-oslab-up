@@ -3,10 +3,6 @@
 # Project 3b: xv6 VM Layout
 
 
-## Updates
-
-Some test cases can be found [here](../tests/project3btest.tar.gz)
-
 
 ## Objectives
 There are two objectives to this assignment:
@@ -73,6 +69,10 @@ You should also be wary of growing your heap and overwriting your stack. In this
 The high end of the xv6 user address space is 640KB (see the USERTOP value defined in the xv6 code). Thus your first stack page should live at 636KB-640KB.
 
 One final part of this project, which is challenging: automatically growing the stack backwards when needed. Doing so would require you to see if a fault occurred on the page above the stack and then, instead of killing the offending process, allocating a new page, mapping it into the address space, and continuing to run.
+
+## Test cases
+
+Some test cases can be found [here](project3btest.tar.gz).
 
 
 ## Other Notes
