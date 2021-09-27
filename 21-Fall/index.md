@@ -26,7 +26,7 @@ Email: &nbsp; 10185102223\[at\]stu.ecnu.edu.cn
 
 We will rely on [Github Classroom](https://classroom.github.com/) to manage assignments.
 To submit projects, please 
-  - first get a [github](www.github.com) account.
+  - first get a [github](https://www.github.com) account.
   - for each project, click ``invite link`` to accept the project assignment 
 (you may be required to link your github account to your student number when accepting the first project).
   - after accepting, a repository is created for your project, and you (for individual project) or your group (for group project) will develop the project in this repository.
@@ -64,12 +64,14 @@ To submit projects, please
 
 -->
 
-### Downloads  
+### xv6 lab environments
 
-- [xv6](resources/xv6.tar.gz)
-- [qemu](resources/qemu-6.828-2.9.0.tar.gz)
-- Notes: For all xv6 projects, we start from a clean version of xv6 kernel (i.e., projects are independet with each other). 
-- [install instrucions (lab machines)](slides/qemu-lab-install.pdf)
+- [How to](resources/xv6env/README.md),
+- [xv6](resources/xv6env/xv6.tar.gz), [qemu](resources/xv6env/qemu-6.828-2.9.0.tar.gz), [Dockerfile](resources/xv6env/Dockerfile)
+- [Troubleshot (lab machines)](slides/qemu-lab-install.pdf)
+
+
+Notes: For all xv6 projects, we start from a clean version of xv6 kernel (i.e., projects are independet with each other). 
 
 ### Lecture Slides
 
