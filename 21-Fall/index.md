@@ -45,10 +45,10 @@ To submit projects, please
 [invite link](https://classroom.github.com/a/wK8pdx4l)
 
 * Project 1a [A Unix Shell](projects/linux/myshell/docs/shell.md),
-<!-- [invite link](https://classroom.github.com/a/2ANYvHjH)-->
+[invite link](https://classroom.github.com/a/2ANYvHjH)
 
 * Project 1b [xv6 System Call](projects/xv6/system_call/docs/xv6_intro.md),
-<!-- [invite link](https://classroom.github.com/a/wekVha0B)-->
+[invite link](https://classroom.github.com/a/wekVha0B)
 <!--
 * Project 2: 
   - 2a [Dynamic Memory Allocation](projects/linux/malloc/docs/malloc.md)
@@ -89,6 +89,7 @@ Notes: For all xv6 projects, we start from a clean version of xv6 kernel (i.e., 
 ### Lab Slides
 * [Lab1part1](slides/lab1part1.pdf) ,   [Lab1part2](slides/lab1part2.pdf)
 * [Lab2 git](slides/lab2git.pdf)
+* [Lab4 make](slides/lab4make.pdf)
 
 
 
