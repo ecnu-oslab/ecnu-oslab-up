@@ -38,29 +38,26 @@ To submit projects, please
 
 ### Topics
 
-* Project 0a [Get familiar with Linux](../projects/linux/linux_warmup/), 
-[invite link](https://classroom.github.com/a/fjsA2ARW)
+* Project 0: 
+  * 0a [Get familiar with Linux](../projects/linux/linux_warmup/), [(invite link)](https://classroom.github.com/a/fjsA2ARW)
+  * 0b [Sorting](../projects/linux/sorting/), [(invite link)](https://classroom.github.com/a/wK8pdx4l)
 
-* Project 0b [Sorting](../projects/linux/sorting/), 
-[invite link](https://classroom.github.com/a/wK8pdx4l)
+* Project 1: 
+  * 1a [A Unix Shell](../projects/linux/myshell/), [(invite link)](https://classroom.github.com/a/2ANYvHjH)
+  * 1b [xv6 System Call](../projects/xv6/system_call/), [(invite link)](https://classroom.github.com/a/wekVha0B)
 
-* Project 1a [A Unix Shell](../projects/linux/myshell/),
-[invite link](https://classroom.github.com/a/2ANYvHjH)
-
-* Project 1b [xv6 System Call](../projects/xv6/system_call/),
-[invite link](https://classroom.github.com/a/wekVha0B)
 * Project 2: 
-  - 2a [Dynamic Memory Allocation](../projects/linux/malloc/)
-  - 2b [xv6 Scheduling](../projects/xv6/scheduling/)
+  * 2a [Dynamic Memory Allocation](../projects/linux/malloc/), [(invite link)](https://classroom.github.com/a/JN26diyr)
+  * 2b [xv6 Scheduling](../projects/xv6/scheduling/), [(invite link)](https://classroom.github.com/a/NfEu1oj6)
 
 <!--
 * Project 3: 
-  - 3a [Locks and Threads](projects/linux/lock_thread/docs/thread.md)
-  - 3b [xv6 VM Layout](projects/xv6/vmlayout/docs/xv6_vmlayout.md)
+  - 3a [Locks and Threads](../projects/linux/lock_thread/)
+  - 3b [xv6 VM Layout](../projects/xv6/vmlayout/)
 
 * Project 4: 
-  - 4a [File Defragmentation](projects/linux/defragmentation/docs/defragmentation.md)
-  - 4b [xv6 Kernel Thread](projects/xv6/thread/docs/xv6_thread.md)
+  - 4a [File Defragmentation](../projects/linux/defragmentation/)
+  - 4b [xv6 Kernel Thread](../projects/xv6/thread/)
 
 -->
 
