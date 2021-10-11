@@ -39,16 +39,16 @@ To submit projects, please
 ### Topics
 
 * Project 0: 
-  * 0a [Get familiar with Linux](../projects/linux/linux_warmup/), [invite link](https://classroom.github.com/a/fjsA2ARW)
-  * 0b [Sorting](../projects/linux/sorting/), [invite link](https://classroom.github.com/a/wK8pdx4l)
+  * 0a [Get familiar with Linux](../projects/linux/linux_warmup/), [(invite link)](https://classroom.github.com/a/fjsA2ARW)
+  * 0b [Sorting](../projects/linux/sorting/), [(invite link)](https://classroom.github.com/a/wK8pdx4l)
 
 * Project 1: 
-  * 1a [A Unix Shell](../projects/linux/myshell/), [invite link](https://classroom.github.com/a/2ANYvHjH)
-  * 1b [xv6 System Call](../projects/xv6/system_call/), [invite link](https://classroom.github.com/a/wekVha0B)
+  * 1a [A Unix Shell](../projects/linux/myshell/), [(invite link)](https://classroom.github.com/a/2ANYvHjH)
+  * 1b [xv6 System Call](../projects/xv6/system_call/), [(invite link)](https://classroom.github.com/a/wekVha0B)
 
 * Project 2: 
-  * 2a [Dynamic Memory Allocation](../projects/linux/malloc/), [invite link](https://classroom.github.com/a/JN26diyr)
-  * 2b [xv6 Scheduling](../projects/xv6/scheduling/), [invite link](https://classroom.github.com/a/NfEu1oj6)
+  * 2a [Dynamic Memory Allocation](../projects/linux/malloc/), [(invite link)](https://classroom.github.com/a/JN26diyr)
+  * 2b [xv6 Scheduling](../projects/xv6/scheduling/), [(invite link)](https://classroom.github.com/a/NfEu1oj6)
 
 <!--
 * Project 3: 
