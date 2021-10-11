@@ -49,11 +49,11 @@ To submit projects, please
 
 * Project 1b [xv6 System Call](../projects/xv6/system_call/),
 [invite link](https://classroom.github.com/a/wekVha0B)
-<!--
 * Project 2: 
-  - 2a [Dynamic Memory Allocation](projects/linux/malloc/docs/malloc.md)
-  - 2b [xv6 Scheduling](projects/xv6/scheduling/docs/xv6_mlfq.md)
+  - 2a [Dynamic Memory Allocation](../projects/linux/malloc/)
+  - 2b [xv6 Scheduling](../projects/xv6/scheduling/)
 
+<!--
 * Project 3: 
   - 3a [Locks and Threads](projects/linux/lock_thread/docs/thread.md)
   - 3b [xv6 VM Layout](projects/xv6/vmlayout/docs/xv6_vmlayout.md)
