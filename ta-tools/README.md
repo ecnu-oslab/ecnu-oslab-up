@@ -10,3 +10,5 @@ To clone **<u>tools</u>**: type `git submodule init` and then `git submodule upd
 
 Or you can pass `--recurse-submodules` to the `git clone` command when cloning the parent git repository.
 
+If you are working with *GitHub Desktop*, simply clone **<u>tools</u>** again in **<u>ecnu-oslab-up</u>**, as if it is a separate repository.
+
