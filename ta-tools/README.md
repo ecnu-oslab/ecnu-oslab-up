@@ -4,7 +4,7 @@
 
 See https://git-scm.com/book/en/v2/Git-Tools-Submodules
 
-You should join organization **ecnu-oslab-ta** to get permission to the repository.
+You should join organization **ecnu-oslab** to get permission to the repository.
 
 To clone **<u>tools</u>**: type `git submodule init` and then `git submodule update` 
 
