@@ -10,7 +10,7 @@ There are three objectives to this part of the assignment:
 
 ## Readings and Notes
 
-At some point you will decide to use a header per each allocated block. The maximum size of such a header is 16 bytes.
+At some point you will decide to use a header per each allocated block. The suggested size of such a header is less than or equal to 16 bytes.
 
 Useful to read OSTEP [Chapter 16](http://pages.cs.wisc.edu/~remzi/OSTEP/vm-freespace.pdf).
 
