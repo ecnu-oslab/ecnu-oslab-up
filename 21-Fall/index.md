@@ -50,11 +50,11 @@ To submit projects, please
   * 2a [Dynamic Memory Allocation](../projects/linux/malloc/), [(invite link)](https://classroom.github.com/a/JN26diyr)
   * 2b [xv6 Scheduling](../projects/xv6/scheduling/), [(invite link)](https://classroom.github.com/a/NfEu1oj6)
 
-<!--
 * Project 3: 
-  - 3a [Locks and Threads](../projects/linux/lock_thread/)
-  - 3b [xv6 VM Layout](../projects/xv6/vmlayout/)
+  * 3a [Locks and Threads](../projects/linux/lock_thread/), [(invite link)](https://classroom.github.com/a/lgsuXdaD)
+  * 3b [xv6 VM Layout](../projects/xv6/vmlayout/), [(invite link)](https://classroom.github.com/a/DQWnkkcL)
 
+<!--
 * Project 4: 
   - 4a [File Defragmentation](../projects/linux/defragmentation/)
   - 4b [xv6 Kernel Thread](../projects/xv6/thread/)
@@ -84,6 +84,7 @@ Notes: For all xv6 projects, we start from a clean version of xv6 kernel (i.e., 
 
 
 ### Lab Slides
+
 * [Lab1part1](slides/lab1part1.pdf) ,   [Lab1part2](slides/lab1part2.pdf)
 * [Lab2 git](slides/lab2git.pdf)
 * [Lab4 make](slides/lab4make.pdf)
