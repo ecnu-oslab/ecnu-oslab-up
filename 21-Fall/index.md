@@ -77,8 +77,8 @@ Notes: For all xv6 projects, we start from a clean version of xv6 kernel (i.e., 
 * [Lecture 3](slides/lecture-3.pdf)
 * [Lecture 4](slides/lecture-4.pdf)
 * [Lecture 5](slides/lecture-5.pdf)
-<!--
 * [Lecture 6](slides/lecture-6.pdf)
+<!--
 * [Lecture 7](slides/lecture-7.pdf)
 -->
 
