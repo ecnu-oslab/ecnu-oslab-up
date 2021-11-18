@@ -1,4 +1,4 @@
-# Project 4: Locks and Threads
+# Project 3a: Locks and Threads
 
 ## Overview
 
