@@ -63,7 +63,7 @@ To submit projects, please
 
 ### xv6 lab environments
 
-- [How to](../xv6env/),
+- [How to](../xv6env/)
 - [xv6](../xv6env/xv6.tar.gz), [qemu](../xv6env/qemu-6.828-2.9.0.tar.gz), [Dockerfile](../xv6env/Dockerfile)
 - [Troubleshot (lab machines)](../xv6env/qemu-lab-install.pdf)
 
@@ -72,7 +72,7 @@ Notes: For all xv6 projects, we start from a clean version of xv6 kernel (i.e., 
 
 ### Lecture Slides
 
-* [Lecture 1](slides/lecture-1.pdf), 
+* [Lecture 1](slides/lecture-1.pdf)
 * [Lecture 2](slides/lecture-2.pdf)
 * [Lecture 3](slides/lecture-3.pdf)
 * [Lecture 4](slides/lecture-4.pdf)
@@ -85,7 +85,7 @@ Notes: For all xv6 projects, we start from a clean version of xv6 kernel (i.e., 
 
 ### Lab Slides
 
-* [Lab1part1](slides/lab1part1.pdf) ,   [Lab1part2](slides/lab1part2.pdf)
+* [Lab1part1](slides/lab1part1.pdf),   [Lab1part2](slides/lab1part2.pdf)
 * [Lab2 git](slides/lab2git.pdf)
 * [Lab4 make](slides/lab4make.pdf)
 
