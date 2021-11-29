@@ -56,8 +56,8 @@ To submit projects, please
 
 <!--
 * Project 4: 
-  - 4a [File Defragmentation](../projects/linux/defragmentation/)
-  - 4b [xv6 Kernel Thread](../projects/xv6/thread/)
+  - 4a [File Defragmentation](../projects/linux/defragmentation/), [(invite link)](https://classroom.github.com/a/ijOXoW3a)
+  - 4b [xv6 Kernel Thread](../projects/xv6/thread/), [(invite link)](https://classroom.github.com/a/P3RglByW)
 
 -->
 
