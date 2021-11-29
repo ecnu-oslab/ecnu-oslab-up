@@ -13,13 +13,13 @@ Specifically, you'll do three things. First, you'll define a new system call to 
 
 Your new clone system call should look like this: 
 ```c
-int clone(void(*fcn)(void*), void *arg, void *stack) .
+int clone(void(*fcn)(void*), void *arg, void *stack);
 ```
-This call creates a new kernel thread which shares the calling process's address space. File descriptors are copied as in fork. The new process uses **stack** as its user stack, which is passed the given argument **arg** and uses a fake return PC (0xffffffff). The stack should be one page in size and page-aligned. The new thread starts executing at the address specified by **fcn**. As with fork(), the PID of the new thread is returned to the parent.
+This call creates a new kernel thread which shares the calling process's address space. File descriptors are copied as in fork. The new process uses **stack** as its user stack, which is passed the given argument **arg** and uses a fake return PC (`0xffffffff`). The stack should be one page in size and page-aligned. The new thread starts executing at the address specified by **fcn**. As with fork(), the PID of the new thread is returned to the parent.
 
 Another new system call is 
 ```c
-int join(void **stack) 
+int join(void **stack);
 ```
 This call waits for a child thread that shares the address space with the calling process. It returns the PID of waited-for child or -1 if none. The location of the child's user stack is copied into the argument **stack**.
 
@@ -27,11 +27,11 @@ You also need to think about the semantics of a couple of existing system calls.
 
 Your thread library will be built on top of this, and just have a simple routine
 ```c 
-thread_create(void (*start_routine)(void*), void *arg) 
+ thread_create(void (*start_routine)(void*), void *arg);
 ```
 This routine should call `malloc()` to create a new user stack, use `clone()` to create the child thread and get it running. A paired routine
 ```c
-int thread_join() 
+int thread_join();
 ```
 should also be used, which calls the underlying `join()` system call, frees the user stack, and then returns.
 
@@ -45,11 +45,8 @@ Have fun!
 
 It might be good to read the xv6 book a bit.
 
-For preparing stacks for threads
-(what's on the stack when you make a function call, and how it all is manipulated),
-you need to know a bit about calling convensions of x86.
-The following two links [1](https://en.wikibooks.org/wiki/X86_Disassembly/Functions_and_Stack_Frames
-), [2](https://en.wikibooks.org/wiki/X86_Disassembly/Calling_Conventions) and the first few chapters of this book ([Programming from the Ground Up](http://download.savannah.gnu.org/releases/pgubook/ProgrammingGroundUp-1-0-booksize.pdf)) might be userful.
+For preparing stacks for threads (what's on the stack when you make a function call, and how it all is manipulated), you need to know a bit about calling conventions of x86. The following two links [1](https://en.wikibooks.org/wiki/X86_Disassembly/Functions_and_Stack_Frames
+), [2](https://en.wikibooks.org/wiki/X86_Disassembly/Calling_Conventions) and the first few chapters of this book ([Programming from the Ground Up](http://download.savannah.gnu.org/releases/pgubook/ProgrammingGroundUp-1-0-booksize.pdf)) might be useful.
 
 
 ## Test cases
@@ -61,4 +58,3 @@ Some test cases can be found [here](project4btest.tar.gz).
 <div id="footer">
   Adapted from <a href="http://pages.cs.wisc.edu/~remzi/Classes/537/Fall2013/Projects/p4b.html"> WISC CS537 </a> by Remzi Arpaci-Dusseau 
 </div>
-
