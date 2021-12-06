@@ -1,4 +1,4 @@
-# Project 5: Defragmentation
+# Project 4a: Defragmentation
 
 ## Overview
 
@@ -22,8 +22,7 @@ should produce the output file "datafile-defrag".
 
 ## Readings
 
-It will be useful to read OSTEP [Chapter 39](http://pages.cs.wisc.edu/~remzi/OSTEP/file-intro.pdf), 
-[Chapter 40](http://pages.cs.wisc.edu/~remzi/OSTEP/file-implementation.pdf).
+It will be useful to read OSTEP [Chapter 39](http://pages.cs.wisc.edu/~remzi/OSTEP/file-intro.pdf), [Chapter 40](http://pages.cs.wisc.edu/~remzi/OSTEP/file-implementation.pdf).
 
 ## Data Structures
 
@@ -113,9 +112,9 @@ When we grade your project, we will expect to see the following files in your re
 * Source code and header files that implement your defragmenter.
 * A Makefile to build your code. Typing make should build defrag. 
 * defrag should be compiled with flags: `-Wall`
-* A file called README which describes the algorithm you have used to implement defragmentation. Your README may optionally include any additional notes on your program that you think are important. The README is **NOT** optional for this project.
+* A file called `README.md` which describes the algorithm you have used to implement defragmentation. Your README may optionally include any additional notes on your program that you think are important. The README is **NOT** optional for this project.
 
-You should not turn in any binary or .o files. Only turn in source code and header files.
+You should **NOT** turn in any binary or .o files. Only turn in source code and header files.
 
 ## Grading
 
@@ -124,7 +123,7 @@ Any warnings that remain will negatively impact your grade.
 
 We will grade your code primarily based on **how well the implementation works**. That is, we will run your code through a suite of inputs (fragmented disk images); your grade will largely be based on how many of these disk images you program correctly defragments. However, you are more likely to get partial credit if you have well-structured, commented code. If we cannot discern what your code was supposed to do, it will be difficult to assign you partial points if your program does not work as expected.
 
-However, we will also be evaluating your memory usage. For this project, your program should have no memory leaks or memory that is still reachable when the program exits. To verify this, we will run your program with valgrind:
+However, we will also be evaluating your memory usage. For this project, your program should have no memory leaks or memory that is still reachable when the program exits. To verify this, we will run your program with `valgrind`:
 
 ```shell
 % valgrind --leak-check=full --show-reachable=yes defrag <fragmented disk file>
