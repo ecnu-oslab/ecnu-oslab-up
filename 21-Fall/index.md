@@ -54,12 +54,10 @@ To submit projects, please
   * 3a [Locks and Threads](../projects/linux/lock_thread/), [(invite link)](https://classroom.github.com/a/lgsuXdaD)
   * 3b [xv6 VM Layout](../projects/xv6/vmlayout/), [(invite link)](https://classroom.github.com/a/DQWnkkcL)
 
-<!--
 * Project 4: 
   - 4a [File Defragmentation](../projects/linux/defragmentation/), [(invite link)](https://classroom.github.com/a/ijOXoW3a)
   - 4b [xv6 Kernel Thread](../projects/xv6/thread/), [(invite link)](https://classroom.github.com/a/P3RglByW)
 
--->
 
 ### xv6 lab environments
 
