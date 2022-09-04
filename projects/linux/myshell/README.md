@@ -1,4 +1,4 @@
-# Project 1a: A Unix Shell
+# A Unix Shell
 
 ## Objectives
 

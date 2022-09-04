@@ -1,4 +1,4 @@
-# Project 4b: xv6 Threads
+# xv6 Threads
 
 
 ## Overview

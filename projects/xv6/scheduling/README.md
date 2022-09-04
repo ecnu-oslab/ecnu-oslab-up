@@ -1,4 +1,4 @@
-# Project 2b: xv6 Scheduler
+# xv6 Scheduler
 
 
 

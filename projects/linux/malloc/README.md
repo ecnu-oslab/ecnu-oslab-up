@@ -1,4 +1,4 @@
-# Project 2a: Malloc and Free
+# Malloc and Free
 
 ## Objectives
 

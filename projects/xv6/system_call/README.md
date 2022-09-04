@@ -1,4 +1,4 @@
-# Project 1b: xv6 System Call
+# xv6 System Call
 
 To develop a better sense of how an operating system works, you will also 
 do a few projects *inside* a real OS kernel. The kernel we'll be using is a

@@ -1,4 +1,4 @@
-# Project 0a: Linux Warm Up
+# Linux Warm Up
 
 
 ## Objective

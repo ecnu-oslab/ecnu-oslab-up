@@ -1,4 +1,4 @@
-# Project 0b: Sorting
+# Sorting
 
 ## Overview
 You will write a simple sorting program. This program should be invoked as follows:

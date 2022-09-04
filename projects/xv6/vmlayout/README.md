@@ -1,8 +1,4 @@
-
-
-# Project 3b: xv6 VM Layout
-
-
+# xv6 VM Layout
 
 ## Objectives
 There are two objectives to this assignment:

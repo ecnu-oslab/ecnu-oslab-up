@@ -1,4 +1,4 @@
-# Project 4a: Defragmentation
+# Defragmentation
 
 ## Overview
 
