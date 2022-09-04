@@ -80,7 +80,7 @@ Notes: For all xv6 projects, we start from a clean version of xv6 kernel (i.e., 
 
 ### Lab Slides
 
-* [Lab1part1](slides/lab1part1.pdf),   [Lab1part2](slides/lab1part2.pdf)
+* [Lab1](slides/lab-1.pdf)
 <!--
 * [Lab2 git](slides/lab2git.pdf)
 * [Lab4 make](slides/lab4make.pdf)
