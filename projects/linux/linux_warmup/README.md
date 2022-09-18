@@ -50,7 +50,7 @@ $ ./myls.sh
 Write an `ls` command with some additional options in `myls.sh` that lists files in the following manner:
 
 - Includes all files, including hidden files.
-- Sizes are listed in human readable format (e.g. 454M instead of 454279954)
+- Sizes are listed in human readable format (e.g. 454M instead of 454279954 and 4.0K instead of 4096)
 - Files are ordered by recency, i.e. sort by last modified date and time. The latest modified comes the first.
 - Output is colorized for directories, executables, etc.
 
@@ -83,7 +83,7 @@ bbox root -rwxr-xr-x
 
 Say you have a command that fails rarely. In order to debug it you need to capture its output but it can be time consuming to get a failure run. 
 
-First, create a bash script `worker.sh` containing the following code. It picks a random number and exit with an error code 1 if n equals 42, otherwise, the script returns safely with exit code 0. Note that the error occurs with a probability of only 1%.
+You are given a bash script [worker.sh](worker.sh) containing the following code. It picks a random number and exit with an error code 1 if n equals 42, otherwise, the script returns safely with exit code 0. Note that the error occurs with a probability of only 1%.
 
 ```bash
  #!/bin/bash

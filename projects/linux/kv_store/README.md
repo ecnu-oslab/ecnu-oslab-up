@@ -171,10 +171,18 @@ get a string like `p,10,remzi`, `strsep()` can be used to split out
 the different pieces.
 
 Also useful is `atoi()` for converting a string to an integer.
-  
+
 If you don't know how to use these functions, use the man pages. For
 example, typing `man malloc` at the command line will give you a lot of
 information on malloc.
+
+### Testing
+
+Run `test-kv.sh` to test your key-value storage. You are given 3 toy tests, which is probably not enough to test the program thoroughly. You can add more tests by yourself. See [README](tests/README.md) for further instructions.
+
+### Hand In
+
+You should hand in only one source file: `kv.c` (without the ".o" file) to your github repository.
 
 ### Tips
 
@@ -186,14 +194,12 @@ command. Then, add a loop and parse multiple commands on one command line.
 Then, add the ability to add elements to an in-memory data structure,
 but don't worry about persistence. Then add persistence. Or something
 like that. 
-
 - **Testing is critical.** A great programmer we once knew said you have to
 write five to ten lines of test code for every line of code you produce;
 testing your code to make sure it works is crucial. Write tests to see if your
 code handles all the cases you think it should. Be as comprehensive as you can
 be. Of course, when grading your projects, we will be. Thus, it is better if
 you find your bugs first, before we do.
-
 - **Keep old versions around.** Keep copies of older versions of your
 program around, as you may introduce bugs and not be able to easily
 undo them. A simple way to do this is to keep copies around, by
@@ -204,7 +210,7 @@ make a copy into the file `kv.v1.c`. More sophisticated
 developers use version control systems such as git; such a tool is
 well worth learning, so do it! 
 
-
 <div id="footer">
-  Forked from <a href="https://github.com/remzi-arpacidusseau/ostep-projects/tree/master/initial-kv"> WISC CS537 </a> by Remzi Arpaci-Dusseau 
+  Adapted from <a href="https://github.com/remzi-arpacidusseau/ostep-projects/tree/master/initial-kv"> WISC CS537 </a> by Remzi Arpaci-Dusseau 
 </div>
+
