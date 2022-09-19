@@ -38,11 +38,11 @@ To submit your project assignments, please
   * 0a [Get familiar with Linux](../projects/linux/linux_warmup/), [(invite link)](https://classroom.github.com/a/2EFv7IL3)
   * 0b [A simple key-value store](../projects/linux/kv_store), [(invite link)](https://classroom.github.com/a/dKp6Y5z_)
 
-<!--
 * Project 1: 
-  * 1a [A Unix Shell](../projects/linux/myshell/), [(invite link)](https://classroom.github.com/a/2ANYvHjH)
-  * 1b [xv6 System Call](../projects/xv6/system_call/), [(invite link)](https://classroom.github.com/a/wekVha0B)
+  * 1a [A Unix Shell](../projects/linux/myshell/), [(invite link)](https://classroom.github.com/a/m8SlBYTH)
+  * 1b [xv6 System Call](../projects/xv6/system_call/), [(invite link)](https://classroom.github.com/a/9c4PqiuJ)
 
+<!--
 * Project 2: 
   * 2a [Dynamic Memory Allocation](../projects/linux/malloc/), [(invite link)](https://classroom.github.com/a/JN26diyr)
   * 2b [xv6 Scheduling](../projects/xv6/scheduling/), [(invite link)](https://classroom.github.com/a/NfEu1oj6)
@@ -54,7 +54,7 @@ To submit your project assignments, please
 * Project 4: 
   - 4a [File Defragmentation](../projects/linux/defragmentation/), [(invite link)](https://classroom.github.com/a/ijOXoW3a)
   - 4b [xv6 Kernel Thread](../projects/xv6/thread/), [(invite link)](https://classroom.github.com/a/P3RglByW)
--->
+  -->
 
 ### xv6 lab environments
 
