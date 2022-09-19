@@ -315,10 +315,6 @@ Then the output is 2. Can you figure out how it works?
 
 To integrate pipe in your mysh, the idea is quite similar to redirection: you need to bind file descriptors  `STDIN_FILENO` and `STDOUT_FILENO` properly before running a command. One key system call is `pipe()` which kindly creates the pipe for you (happy, yeah!). Again, details of `pipe` can be found in the man page, and also section 15.2 of Advanced UNIX Programming book. Read them, call `pipe()`, revisit redirection, make your pipe rock.
 
-## Self-testing
-
-[Here](pj2_test_samples.zip) are some test cases for your shell.
-
 ## Hand In
 
 To ensure that we compile your C correctly for the demo, you will need to create a simple makefile; this way our scripts can just run make to compile your code with the right libraries and flags. If you don't know how to write a makefile, you might want to look at the man pages for make or better yet, read the tutorial.
@@ -342,9 +338,15 @@ If you want to get the bonus, you also need to hand in
 
 DO NOT submit any .o files. Make sure that your code runs correctly on Linux machines.
 
-## Grading
+## Testing & Grading
 
-We will run your program on a suite of test cases, some of which will exercise your programs ability to correctly execute commands and some of which will test your programs ability to catch error conditions. Be sure that you thoroughly exercise your program's capabilities on a wide range of test suites, so that you will not be unpleasantly surprised when we run our tests.
+[Here](https://github.com/ecnu-oslab/LabTemplate-shell) are some test cases for your shell. You should test your program on a suite of test cases, some of which will exercise your programs ability to correctly execute commands and some of which will test your programs ability to catch error conditions.
+
+Run `test-mysh.sh` to test your shell. You can use `./test-mysh.sh -c` to continue testing even some of the tests failed. See [README](tests/README.md) for further instructions.
+
+The test script does not run tests on pipe by default. To test your pipe implementation, run `./test-mysh.sh -d tests/pipe` .
+
+You are given all test cases that we will use during grading. Don't try to overfit the test set (write a huge switch case to match all inputs). Also keep in mind that passing all the tests doesn't mean that you are bug free.
 
 <div id="footer">
   Adapted from <a href="http://pages.cs.wisc.edu/~remzi/Classes/537/Fall2013/Projects/p2a.html"> WISC CS537 </a> by Remzi Arpaci-Dusseau 
