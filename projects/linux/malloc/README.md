@@ -10,13 +10,13 @@ There are three objectives to this part of the assignment:
 
 ## Readings and Notes
 
-At some point you will decide to use a header per each allocated block. The suggested size of such a header is less than or equal to 16 bytes.
+At some point you will decide to use a header per each allocated block. The maximum size of such a header is 16 bytes.
 
 Useful to read OSTEP [Chapter 16](http://pages.cs.wisc.edu/~remzi/OSTEP/vm-freespace.pdf).
 
 ## Overview
 
-In this project, you will be implementing a memory allocator for the heap of a user-level process. Your functions will be to build your own malloc() and free().
+In this project, you will be implementing a memory allocator for the heap of a user-level process. Your functions will be to build your own `malloc()` and `free()`.
 
 Memory allocators have two distinct tasks. First, the memory allocator asks the operating system to expand the heap portion of the process's address space by calling either sbrk or mmap. Second, the memory allocator doles out this memory to the calling process. This involves managing a free list of memory and finding a contiguous chunk of memory that is large enough for the user's request; when the user later frees memory, it is added back to this list.
 
@@ -24,36 +24,36 @@ This memory allocator is usually provided as part of a standard library and is n
 
 When implementing this basic functionality in your project, we have a few guidelines. First, when requesting memory from the OS, you must use **mmap()** (which is easier to use than sbrk()). Second, although a real memory allocator requests more memory from the OS whenever it can't satisfy a request from the user, your memory allocator must call mmap() only **one** time (when it is first initialized).
 
-Classic malloc() and free() are defined as follows:
+Classic `malloc()` and `free()` are defined as follows:
 
 * `void *malloc(size_t size)`, which allocates size bytes and returns a pointer to the allocated memory. The memory is not cleared.
-* `void free(void *ptr)`, which frees the memory space pointed to by ptr, which must have been returned by a previous call to malloc() (or calloc() or realloc()). Otherwise, or if free(ptr) has already been called before, undefined behaviour occurs. If ptr is NULL, no operation is performed.
+* `void free(void *ptr)`, which frees the memory space pointed to by ptr, which must have been returned by a previous call to `malloc()` (or `calloc()` or `realloc()`). Otherwise, or if free(ptr) has already been called before, undefined behaviour occurs. If ptr is NULL, no operation is performed.
 
-For simplicity, your implementations of `mem_alloc()` and `mem_free()` should basically follow what malloc() and free() do; see below for details.
+For simplicity, your implementations of `Mem_Alloc()` and `Mem_Free()` should basically follow what malloc() and free() do; see below for details.
 
-You will also provide a supporting function, `mem_dump()`, described below; this routine simply prints which regions are currently free and should be used by you for debugging purposes.
+You will also provide a supporting function, `Mem_Dump()`, described below; this routine simply prints which regions are currently free and should be used by you for debugging purposes.
 
 ## Program Specifications
 
 For this project, you will be implementing several different routines as part of a shared library. Note that you will not be writing a main() routine for the code that you handin (but you should implement one for your own testing). We have provided the prototypes for these functions in the file [mem.h](mem.h);  you should include this header file in your code to ensure that you are adhering to the specification exactly. **You should not change mem.h in any way!** We now define each of these routines more precisely.
 
-* `int mem_init(int size_of_region)`: mem_init is called one time by a process using your routines. `size_of_region` is the number of bytes that you should request from the OS using mmap().
+* `int Mem_Init(int size_of_region)`: `Mem_Init()` is called one time by a process using your routines. `size_of_region` is the number of bytes that you should request from the OS using `mmap()`.
 
-    Note that you may need to round up this amount so that you request memory in units of the page size (see the man pages for `getpagesize()`). Note also that you need to use this allocated memory for your own data structures as well; that is, your infrastructure for tracking the mapping from addresses to memory objects has to be placed in this region as well. You are **not** allowed to malloc(), or any other related function, in any of your routines! Similarly, you should **not** allocate global arrays. However, you may allocate a few global variables (e.g., a pointer to the head of your free list.)
+    Note that you may need to round up this amount so that you request memory in units of the page size (see the man pages for `getpagesize()`). Note also that you need to use this allocated memory for your own data structures as well; that is, your infrastructure for tracking the mapping from addresses to memory objects has to be placed in this region as well. You are **not** allowed to `malloc()`, or any other related function, in any of your routines! Similarly, you should **not** allocate global arrays. However, you may allocate a few global variables (e.g., a pointer to the head of your free list.)
 
     Return 0 on a success (when call to mmap is successful). Otherwise, return -1 and set `m_error` to `E_BAD_ARGS`. Cases where mem_init should return a failure: mem_init is called more than once; size_of_region is less than or equal to 0.
 
-* `void *mem_alloc(int size, int style)`: mem_alloc is similar to the library function malloc(). mem_alloc takes as input the size in bytes of the object to be allocated and returns a pointer to the start of that object. The function returns NULL if there is not enough contiguous free space within `size_of_region` allocated by mem_init to satisfy this request (and sets `m_error` to `E_NO_SPACE`).
+* `void *Mem_Alloc(int size, int style)`: `Mem_Alloc()` is similar to the library function `malloc()`. `Mem_Alloc()` takes as input the size in bytes of the object to be allocated and returns a pointer to the start of that object. The function returns NULL if there is not enough contiguous free space within `size_of_region` allocated by `Mem_Init()` to satisfy this request (and sets `m_error` to `E_NO_SPACE`).
 
     The style parameter determines how to look through the list for a free space. It can be set to `M_BESTFIT` (BF) for the best-fit policy, `M_WORSTFIT` (WF) for worst-fit, and `M_FIRSTFIT` (FF) for first-fit. BF simply looks through your free list and finds the first free space that is smallest in size (but still can hold the requested amount) and returns the requested size (the first part of the chunk) to the user, keeping the rest of the chunk in its free list; WF looks for the largest chunk and allocates the requested space out of that; FF looks for the first chunk that fits and returns the requested space out of that.
 
-    For performance reasons, `mem_alloc()` should return 8-byte aligned chunks of memory. For example if a user allocates 1 byte of memory, your `mem_alloc()` implementation should return 8 bytes of memory so that the next free block will be 8-byte alligned too. To figure out whether you return 8-byte aligned pointers, you could print the pointer this way `printf("%p", ptr)`. The last digit should be a multiple of 8 (i.e. 0 or 8).
+    For performance reasons, `Mem_Alloc()` should return 8-byte aligned chunks of memory. For example if a user allocates 1 byte of memory, your `Mem_Alloc()` implementation should return 8 bytes of memory so that the next free block will be 8-byte aligned too. To figure out whether you return 8-byte aligned pointers, you could print the pointer this way `printf("%p", ptr)`. The last digit should be a multiple of 8 (i.e. 0 or 8).
 
-* `int mem_free(void *ptr)`: mem_free() frees the memory object that ptr points to. Just like with the standard free(), if ptr is NULL, then no operation is performed. The function returns 0 on success, and -1 otherwise.
+* `int Mem_Free(void *ptr)`: `Mem_Free()` frees the memory object that ptr points to. Just like with the standard `free()`, if ptr is NULL, then no operation is performed. The function returns 0 on success, and -1 otherwise.
 
-    **Coalescing**: mem_free() should make sure to coalesce free space. Coalescing rejoins neighboring freed blocks into one bigger free chunk, thus ensuring that big chunks remain free for subsequent calls to mem_alloc().
+    **Coalescing**: `Mem_Free()` should make sure to coalesce free space. Coalescing rejoins neighboring freed blocks into one bigger free chunk, thus ensuring that big chunks remain free for subsequent calls to `Mem_Alloc()`.
 
-* `void mem_dump()`: This is just a debugging routine for your own use. Have it print the regions of free memory to the screen.
+* `void Mem_Dump()`: This is just a debugging routine for your own use. Have it print the regions of free memory to the screen.
 
 You must provide these routines in a shared library named `libmem.so`. Placing the routines in a shared library instead of a simple object file makes it easier for other programmers to link with your code. There are further advantages to shared (dynamic) libraries over static libraries. When you link with a static library, the code for the entire library is merged with your object code to create your executable; if you link to many static libraries, your executable will be enormous. However, when you link to a shared library, the library's code is not merged with your program's object code; instead, a small amount of stub code is inserted into your object code and the stub code finds and invokes the library code when you execute the program. Therefore, shared libraries have two advantages: they lead to smaller executables and they enable users to use the most recent version of the library at run-time. To create a shared library named libmem.so, use the following commands (assuming your library code is in a single file "mem.c"):
 
@@ -65,10 +65,10 @@ gcc -shared -o libmem.so mem.o
 To link with this library, you simply specify the base name of the library with `-lmem` and the path so that the linker can find the library `-L.`
 
 ```shell
-gcc -lmem -L. -o myprogram mymain.c -Wall -Werror
+gcc -Wall -Werror -L. mymain.c -lmem -o myprogram
 ```
 
-Of course, these commands should be placed in a Makefile. Before you run "myprogram", you will need to set the environment variable, `LD_LIBRARY_PATH`, so that the system can find your library at run-time. Assuming you always run myprogram from this same directory, you can use the command:
+Of course, these commands should be placed in a `Makefile`. Before you run "myprogram", you will need to set the environment variable, `LD_LIBRARY_PATH`, so that the system can find your library at run-time. Assuming you always run myprogram from this same directory, you can use the command:
 
 ```shell
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:.
@@ -94,10 +94,15 @@ return 0;
 ## Hand In
 
 * Source file `mem.c`
-* Makefile which builds the memory allocation library.
+* `Makefile` which builds the memory allocation library.
+* DO NOT submit \*.o \*.so or any binary files.
 
 
-## Grading
+## Testing & Grading
+
+To test your library, you should write a bunch of programs that use the library. To make your life easier, we've already done that for you. You can also add your own tests: all you need to do is to add your C source files in `tests/src/` and then provide corresponding `.run` files in `tests/` (and possibly `.out` and `.err` if required). See original tests as examples.
+
+Run `test-libmem.sh` to test your library.
 
 Your implementation will be graded on functionality. However, we will also be comparing the performance of each of your projects, so try to be efficient!
 
