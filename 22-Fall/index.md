@@ -44,8 +44,8 @@ To submit your project assignments, please
 
 <!--
 * Project 2: 
-  * 2a [Dynamic Memory Allocation](../projects/linux/malloc/), [(invite link)](https://classroom.github.com/a/JN26diyr)
-  * 2b [xv6 Scheduling](../projects/xv6/scheduling/), [(invite link)](https://classroom.github.com/a/NfEu1oj6)
+  * 2a [Dynamic Memory Allocation](../projects/linux/malloc/), [(invite link)](https://classroom.github.com/a/IunKqXl7)
+  * 2b [xv6 Scheduling](../projects/xv6/scheduling/), [(invite link)](https://classroom.github.com/a/uS6fgBvO)
 
 * Project 3: 
   * 3a [Locks and Threads](../projects/linux/lock_thread/), [(invite link)](https://classroom.github.com/a/lgsuXdaD)
