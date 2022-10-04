@@ -93,7 +93,7 @@ return 0;
 
 ## Hand In
 
-* Source files: `mem.c` and any other source files.
+* Source file `mem.c`
 * `Makefile` which builds the memory allocation library.
 * DO NOT submit \*.o \*.so or any binary files.
 
@@ -103,8 +103,6 @@ return 0;
 To test your library, you should write a bunch of programs that use the library. To make your life easier, we've already done that for you. You can also add your own tests: all you need to do is to add your C source files in `tests/src/` and then provide corresponding `.run` files in `tests/` (and possibly `.out` and `.err` if required). See original tests as examples.
 
 Run `test-libmem.sh` to test your library.
-
-If you organize your project structure in a different way (by adding `include/` or `bin/` folder, for example) , you might want to specify those paths in `tests/Makefile` in order to compile tests cases (`-I../include` and `-L../bin` in the example above).
 
 Your implementation will be graded on functionality. However, we will also be comparing the performance of each of your projects, so try to be efficient!
 
