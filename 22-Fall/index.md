@@ -42,11 +42,11 @@ To submit your project assignments, please
   * 1a [A Unix Shell](../projects/linux/myshell/), [(invite link)](https://classroom.github.com/a/m8SlBYTH)
   * 1b [xv6 System Call](../projects/xv6/system_call/), [(invite link)](https://classroom.github.com/a/9c4PqiuJ)
 
-<!--
 * Project 2: 
   * 2a [Dynamic Memory Allocation](../projects/linux/malloc/), [(invite link)](https://classroom.github.com/a/IunKqXl7)
   * 2b [xv6 Scheduling](../projects/xv6/scheduling/), [(invite link)](https://classroom.github.com/a/uS6fgBvO)
 
+<!--
 * Project 3: 
   * 3a [Locks and Threads](../projects/linux/lock_thread/), [(invite link)](https://classroom.github.com/a/lgsuXdaD)
   * 3b [xv6 VM Layout](../projects/xv6/vmlayout/), [(invite link)](https://classroom.github.com/a/DQWnkkcL)
