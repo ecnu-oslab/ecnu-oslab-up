@@ -89,7 +89,10 @@ Notes: For all xv6 projects, we start from a clean version of xv6 kernel (i.e., 
 
 ### Timeline (tentative)
 
- ![timeline](images/timeline.png)
+NOTICE (17/10/2022): please checkout our new timeline 
+
+ ~~[timeline](images/timeline.png)~~
+ ![timeline](images/timeline_update.png)
 
 ### Plagiarism Policy
 
