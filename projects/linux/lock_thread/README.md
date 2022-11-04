@@ -1,4 +1,4 @@
-# Locks and Threads
+# Locks and Condition Variables
 
 ## Overview
 
@@ -94,29 +94,70 @@ Finally, you will write up a report on some performance comparison experiments. 
 * Give some analysis for each experiment. Why you can observe the result? What cause the performance difference? 
 * ...
 
+<!--
 You will do this for each of your data structures (counter, list, hash table). 
+-->
+You can do this only for hash table. 
 
 The result of comparison should be presented accurately and clearly. Figures and tables are required. For example, you can give such an figure that along the x-axis, you vary the number of threads contending for the data structure, while the y-axis will plot how long it took all of the threads to finish running. The figure might look like this:
 
 ![](http://pages.cs.wisc.edu/~remzi/Classes/537/Spring2010/Projects/data.jpg)
 
+where points represent running time (y-axis) of a lock implementation on
+an operation (say, 100000 `hash_lookup` calls) with respect to the number of threads.
+
+You could also study the following problem,
+* Given a bucket size, how your hash table performs when conducting only one type of operations (`hash_lookup`, `hash_insert`, or `hash_delete`) 
+* Given a bucket size, how your hash table performs when conducting both `hash_lookup` and  `hash_insert` 
+* A hash table scaling test - this test should fix the number of threads (say at 20) and vary the number of buckets
+* ...
+
+
+<!--
 This graph plots the average performance of many threads updating a shared counter: each thread would call `counter_increment(&counter)` in a loop max times.
 
 For this experiment, max was set to 1000000, and each curve in the figure shows the performance of either using your own spin lock or a pthreads lock inside the counter library.
+-->
 
+<!--
 Similar plots should be made for:
-
 * A list insertion test - where you have threads each insert say 10e6 items into a list (and scale the number of lists threads)
 * A list insert delete test - where you have threads each first insert say 10e6 items into a list, then delete all items. How about random insertion and delete?
+
 * A hash table test - same as above but with a hash table with a reasonable bucket size
 * A hash table scaling test - this test should fix the number of threads (say at 20) and vary the number of buckets
 * ...
+-->
 
 Rather than only comparing pthread lock and your spin lock, you could also plot curves for your different mutex implementations.
 
 Timing should be done with `gettimeofday()`. Read the man page for details. One thing that is good to do: write a wrapper which returns the time in seconds as a floating-point value. This makes the timing routine really easy to use.
 
 To make your graph less noisy, you will have to run multiple iterations, as well as to make sure to let each experiment run long enough so as to be meaningful. You might then plot the average (as done above) and even a standard deviation.
+
+
+## Part 5: The Producer-Consumer Problem
+
+Finally, you will try to solve the classical producer-consumer problem.
+Recall that, apart from protecting critical sections with locks,
+another type of concurrency problem
+requires communications among threads: some threads wait, and some threads signal.
+The producer-consumer problem is such an example:
+we have a bounded buffer, producer threads put items into the buffer,
+and consumer threads get items from it.
+Producers (consumers) should be blocked when the buffer is full (empty)
+and woke up when new empty buffer slots (new items) are available.
+
+One real-world application following the producer-consumer setting
+is message queue (e.g., [kafka event streaming](https://kafka.apache.org/documentation/)) 
+where events are placed in a queue by some producers (e.g., web crawlers)
+and handled by some consumers (e.g., your powerful text analyzers).
+
+Your job is to fill in the following api,
+
+```c
+// c api
+```
 
 ## Hand In
 
