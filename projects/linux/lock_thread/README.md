@@ -6,7 +6,7 @@ In this project, you will be getting a feel for threads, locks, and performance.
 
 ## Readings
 
-OSTEP [Chapter 27](http://pages.cs.wisc.edu/~remzi/OSTEP/threads-api.pdf), [Chapter 28](http://pages.cs.wisc.edu/~remzi/OSTEP/threads-locks.pdf), [Chapter 29](http://pages.cs.wisc.edu/~remzi/OSTEP/threads-locks-usage.pdf).
+OSTEP [Chapter 27](http://pages.cs.wisc.edu/~remzi/OSTEP/threads-api.pdf), [Chapter 28](http://pages.cs.wisc.edu/~remzi/OSTEP/threads-locks.pdf), [Chapter 29](http://pages.cs.wisc.edu/~remzi/OSTEP/threads-locks-usage.pdf), [Chapter 30](https://pages.cs.wisc.edu/~remzi/OSTEP/threads-cv.pdf).
 
 ## Part 1: Spin Locks
 
@@ -52,32 +52,35 @@ Next, you will use your locks to build three concurrent data structures. The thr
 To build the counter, you should implement the following code:
 
 ```C
-void counter_init(counter_t *c, int value);
-int counter_get_value(counter_t *c);
-void counter_increment(counter_t *c);
-void counter_decrement(counter_t *c);
+struct counter_t *counter_new(int value);
+int counter_get_value(struct counter_t *c);
+void counter_increment(struct counter_t *c);
+void counter_decrement(struct counter_t *c);
+void counter_destroy(struct counter_t *c);
 ```
 
-You will make these routines available as a shared library, so that multi-threaded programs can update a shared counter. The library will be called `libcounter.so`
+`counter_new` allocates memory and initialize it properly, `counter_destroy` frees the memory. The other three routines do the obvious things. You will make these routines available as a shared library, so that multi-threaded programs can update a shared counter. The library will be called `libcounter.so`
 
 To build the list, you should implement the following routines:
 
 ```C
-void list_init(list_t *list);
-void list_insert(list_t *list, unsigned int key);
-void list_delete(list_t *list, unsigned int key);
-void *list_lookup(list_t *list, unsigned int key);
+struct list_t *list_new();
+void list_insert(struct list_t *list, int key);
+void list_delete(struct list_t *list, int key);
+int list_lookup(struct list_t *list, int key);
+void list_destroy(struct list_t *list);
 ```
 
-The routines do the obvious things. The structure `list_t` should contain whatever is needed to manage the list (including a lock). Don't do anything fancy; just a simple insert-at-head list would be fine. This library will be called `liblist.so`
+The structure `list_t` should contain whatever is needed to manage the list (including a lock). Don't do anything fancy; just a simple insert-at-head list would be fine. This library will be called `liblist.so`
 
 To build the hash table, you should implement the following code:
 
 ```C
-void hash_init(hash_t *hash, int size);
-void hash_insert(hash_t *hash, unsigned int key);
-void hash_delete(hash_t *hash, unsigned int key);
-void *hash_lookup(hash_t *hash, unsigned int key);
+struct hash_t *hash_new(int size);
+void hash_insert(struct hash_t *hash, int key);
+void hash_delete(struct hash_t *hash, int key);
+int *hash_lookup(struct hash_t *hash, int key);
+void hash_destroy(struct hash_t *hash);
 ```
 
 The only difference from the list interface is that the user can specify the number of buckets in the hash table. Each bucket should basically contain a list upon which to store elements. This library will be called `libhash.so`
@@ -153,15 +156,22 @@ is message queue (e.g., [kafka event streaming](https://kafka.apache.org/documen
 where events are placed in a queue by some producers (e.g., web crawlers)
 and handled by some consumers (e.g., your powerful text analyzers).
 
-Your job is to fill in the following api,
+To build the message queue, you should implement the following code:
 
 ```c
-// c api
+struct mq_t *mq_new(int buf_size);
+void mq_produce(struct mq_t *mq, int number);
+int mq_consume(struct mq_t *mq);
+void mq_destroy(struct mq_t *mq);
 ```
+
+You don't have to implement your own conditional variables, simply use `pthread_cond_t` and its APIs (`pthread_cond_init`, `pthread_cond_signal`, `pthread_cond_wait`) to build your library. This library will be called `libmq.so`
+
+You should report on details of the producer-consumer implementation.
 
 ## Hand In
 
-* Source files (.c, .h) of your locks and three libraries (counter, hash, and list)
+* Source files (.c, .h) of your locks and three libraries (counter, hash, list and mq)
 * Makefile which builds each of the libraries
 * The **PDF** version of your report.
 
