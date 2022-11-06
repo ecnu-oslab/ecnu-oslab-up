@@ -183,7 +183,7 @@ We will NOT be grading based on testing results in this project, but you should 
 
 * Source files (.c, .h) of your locks.
 * `Makefile` which builds each of the libraries (Running `make` should build all four libraries).
-* The **PDF** version of your report.
+* The **PDF** version of your report. The report should be NO MORE than 8 pages. Be concise!
 * DO NOT submit \*.o \*.so or any binary files.
 
 <div id="footer">
