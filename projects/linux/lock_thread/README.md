@@ -68,7 +68,7 @@ struct list_t *list_new();
 void list_destroy(struct list_t *list);
 void list_insert(struct list_t *list, int key);
 void list_delete(struct list_t *list, int key);
-int list_lookup(struct list_t *list, int key);
+void *list_lookup(struct list_t *list, int key);
 ```
 
 The structure `list_t` should contain whatever is needed to manage the list (including a lock). Don't do anything fancy; just a simple insert-at-head list would be fine. This library will be called `liblist.so`
@@ -80,7 +80,7 @@ struct hash_t *hash_new(int size);
 void hash_destroy(struct hash_t *hash);
 void hash_insert(struct hash_t *hash, int key);
 void hash_delete(struct hash_t *hash, int key);
-int *hash_lookup(struct hash_t *hash, int key);
+void *hash_lookup(struct hash_t *hash, int key);
 ```
 
 The only difference from the list interface is that the user can specify the number of buckets in the hash table. Each bucket should basically contain a list upon which to store elements. This library will be called `libhash.so`
