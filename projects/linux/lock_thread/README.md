@@ -2,7 +2,7 @@
 
 ## Overview
 
-In this project, you will be getting a feel for threads, locks, condition variables and performance. The first entity you will build is called a spin lock. A spin lock uses some kind of powerful hardware instruction in order to provide mutual exclusion among threads. Then, you may be not satisfied with performances of the simple spin lock, and step further to develop a mutex. With locks in hand, you can build thread-safe versions of three common data structures: counter, list and hash table. Then, you will try to make a nice report by comparing different lock implementations and  concurrency levels. Finally, you will tackle the producer-consumer problem using conditional variables. Ready? Welcome to parallel universes!
+In this project, you will be getting a feel for threads, locks, condition variables and performance. The first entity you will build is called a spin lock. A spin lock uses some kind of powerful hardware instruction in order to provide mutual exclusion among threads. Then, you may be not satisfied with performances of the simple spin lock, and step further to develop a mutex. With locks in hand, you can build thread-safe versions of three common data structures: counter, list and hash table. Then, you will try to make a nice report by comparing different lock implementations and  concurrency levels. Finally, you will tackle the producer-consumer problem using condition variables. Ready? Welcome to parallel universes!
 
 ## Readings
 
@@ -165,7 +165,7 @@ void mq_produce(struct mq_t *mq, int item);
 int mq_consume(struct mq_t *mq);
 ```
 
-The structure `mq_t` should contain whatever is needed including conditional variables, mutex (used by conditional variables), buffer, information of current status, etc. You don't have to implement your own conditional variables, simply use `pthread_cond_t` and its APIs (`pthread_cond_init`, `pthread_cond_signal`, `pthread_cond_wait`) to build your library. This library will be called `libmq.so`
+The structure `mq_t` should contain whatever is needed including condition variables, mutex (used by condition variables), buffer, information of current status, etc. You don't have to implement your own condition variables, simply use `pthread_cond_t` and its APIs (`pthread_cond_init`, `pthread_cond_signal`, `pthread_cond_wait`) to build your library. This library will be called `libmq.so`
 
 You should also report on details of the message queue implementation.
 
