@@ -46,11 +46,11 @@ To submit your project assignments, please
   * 2a [Dynamic Memory Allocation](../projects/linux/malloc/), [(invite link)](https://classroom.github.com/a/IunKqXl7)
   * 2b [xv6 Scheduling](../projects/xv6/scheduling/), [(invite link)](https://classroom.github.com/a/uS6fgBvO)
 
-<!--
 * Project 3: 
-  * 3a [Locks and Threads](../projects/linux/lock_thread/), [(invite link)](https://classroom.github.com/a/lgsuXdaD)
-  * 3b [xv6 VM Layout](../projects/xv6/vmlayout/), [(invite link)](https://classroom.github.com/a/DQWnkkcL)
+  * 3a [Locks and Condition Variables](../projects/linux/lock_thread/), [(invite link)](https://classroom.github.com/a/jD-AboCz)
+  * 3b [xv6 VM Layout](../projects/xv6/vmlayout/), [(invite link)](https://classroom.github.com/a/ioWs7D5N)
 
+<!--
 * Project 4: 
   - 4a [File Defragmentation](../projects/linux/defragmentation/), [(invite link)](https://classroom.github.com/a/ijOXoW3a)
   - 4b [xv6 Kernel Thread](../projects/xv6/thread/), [(invite link)](https://classroom.github.com/a/P3RglByW)
