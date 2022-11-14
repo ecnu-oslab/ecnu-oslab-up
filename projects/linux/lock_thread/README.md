@@ -2,11 +2,11 @@
 
 ## Overview
 
-In this project, you will be getting a feel for threads, locks, and performance. The first entity you will build is called a spin lock. A spin lock uses some kind of powerful hardware instruction in order to provide mutual exclusion among threads. Then, you may be not satisfied with performances of the simple spin lock, and step further to develop a mutex. With locks in hand, you can build thread-safe versions of three common data structures: counter, list and hash table. Finally, you will try to make a nice report by comparing different lock implementations and  concurrency levels. Ready? Welcome to parallel universes!
+In this project, you will be getting a feel for threads, locks, condition variables and performance. The first entity you will build is called a spin lock. A spin lock uses some kind of powerful hardware instruction in order to provide mutual exclusion among threads. Then, you may be not satisfied with performances of the simple spin lock, and step further to develop a mutex. With locks in hand, you can build thread-safe versions of three common data structures: counter, list and hash table. Then, you will try to make a nice report by comparing different lock implementations and  concurrency levels. Finally, you will tackle the producer-consumer problem using condition variables. Ready? Welcome to parallel universes!
 
 ## Readings
 
-OSTEP [Chapter 27](http://pages.cs.wisc.edu/~remzi/OSTEP/threads-api.pdf), [Chapter 28](http://pages.cs.wisc.edu/~remzi/OSTEP/threads-locks.pdf), [Chapter 29](http://pages.cs.wisc.edu/~remzi/OSTEP/threads-locks-usage.pdf).
+OSTEP [Chapter 27](http://pages.cs.wisc.edu/~remzi/OSTEP/threads-api.pdf), [Chapter 28](http://pages.cs.wisc.edu/~remzi/OSTEP/threads-locks.pdf), [Chapter 29](http://pages.cs.wisc.edu/~remzi/OSTEP/threads-locks-usage.pdf), [Chapter 30](https://pages.cs.wisc.edu/~remzi/OSTEP/threads-cv.pdf).
 
 ## Part 1: Spin Locks
 
@@ -52,32 +52,35 @@ Next, you will use your locks to build three concurrent data structures. The thr
 To build the counter, you should implement the following code:
 
 ```C
-void counter_init(counter_t *c, int value);
-int counter_get_value(counter_t *c);
-void counter_increment(counter_t *c);
-void counter_decrement(counter_t *c);
+struct counter_t *counter_new(int value);
+void counter_destroy(struct counter_t *c);
+int counter_get_value(struct counter_t *c);
+void counter_increment(struct counter_t *c);
+void counter_decrement(struct counter_t *c);
 ```
 
-You will make these routines available as a shared library, so that multi-threaded programs can update a shared counter. The library will be called `libcounter.so`
+`counter_new` allocates memory and initialize it properly, `counter_destroy` frees the memory. The other three routines do the obvious things. You will make these routines available as a shared library, so that multi-threaded programs can update a shared counter. The library will be called `libcounter.so`
 
 To build the list, you should implement the following routines:
 
 ```C
-void list_init(list_t *list);
-void list_insert(list_t *list, unsigned int key);
-void list_delete(list_t *list, unsigned int key);
-void *list_lookup(list_t *list, unsigned int key);
+struct list_t *list_new();
+void list_destroy(struct list_t *list);
+void list_insert(struct list_t *list, int key);
+void list_delete(struct list_t *list, int key);
+void *list_lookup(struct list_t *list, int key);
 ```
 
-The routines do the obvious things. The structure `list_t` should contain whatever is needed to manage the list (including a lock). Don't do anything fancy; just a simple insert-at-head list would be fine. This library will be called `liblist.so`
+The structure `list_t` should contain whatever is needed to manage the list (including a lock). Don't do anything fancy; just a simple insert-at-head list would be fine. This library will be called `liblist.so`
 
 To build the hash table, you should implement the following code:
 
 ```C
-void hash_init(hash_t *hash, int size);
-void hash_insert(hash_t *hash, unsigned int key);
-void hash_delete(hash_t *hash, unsigned int key);
-void *hash_lookup(hash_t *hash, unsigned int key);
+struct hash_t *hash_new(int size);
+void hash_destroy(struct hash_t *hash);
+void hash_insert(struct hash_t *hash, int key);
+void hash_delete(struct hash_t *hash, int key);
+void *hash_lookup(struct hash_t *hash, int key);
 ```
 
 The only difference from the list interface is that the user can specify the number of buckets in the hash table. Each bucket should basically contain a list upon which to store elements. This library will be called `libhash.so`
@@ -85,7 +88,7 @@ The hash table should simply use one list per bucket. How can you make sure to a
 
 ## Part 4: Comparing Performance
 
-Finally, you will write up a report on some performance comparison experiments. Specifically, you will 
+Then, you will write up a report on some performance comparison experiments. Specifically, you will 
 
 * Compare the performance of **your locks** versus the performance of pthread locks
 * Compare different implementations of **your locks** (spin lock versus mutex, different mutex)
@@ -143,8 +146,8 @@ Recall that, apart from protecting critical sections with locks,
 another type of concurrency problem
 requires communications among threads: some threads wait, and some threads signal.
 The producer-consumer problem is such an example:
-we have a bounded buffer, producer threads put items into the buffer,
-and consumer threads get items from it.
+we have a bounded buffer, producer threads put items (integers, in our case) into the buffer,
+and consumer threads get items (integers) from it.
 Producers (consumers) should be blocked when the buffer is full (empty)
 and woke up when new empty buffer slots (new items) are available.
 
@@ -153,17 +156,35 @@ is message queue (e.g., [kafka event streaming](https://kafka.apache.org/documen
 where events are placed in a queue by some producers (e.g., web crawlers)
 and handled by some consumers (e.g., your powerful text analyzers).
 
-Your job is to fill in the following api,
+To build the message queue, you should implement the following code:
 
 ```c
-// c api
+struct mq_t *mq_new(int buf_size);
+void mq_destroy(struct mq_t *mq);
+void mq_produce(struct mq_t *mq, int item);
+int mq_consume(struct mq_t *mq);
 ```
+
+The structure `mq_t` should contain whatever is needed including condition variables, mutex (used by condition variables), buffer, information of current status, etc. You don't have to implement your own condition variables, simply use `pthread_cond_t` and its APIs (`pthread_cond_init`, `pthread_cond_signal`, `pthread_cond_wait`) to build your library. This library will be called `libmq.so`
+
+You should also report on details of the message queue implementation.
+
+## Testing
+
+Researchers have spent a great deal of time and effort looking into concurrency bugs over many years. Concurrency bugs are hard to catch and passing all tests does not guarantee correctness.
+
+We provide a test program for message queue. Run `test-lock.sh` to test it. Concurrency bugs may not be reproducible due to the randomness of scheduling. It's handy to have a script that runs the test script multiple times in case your program occasionally fails. Running `./test-many.sh 100` will repeat `test-lock.sh` 100 times, which will suffice in most cases. To identify potential dead-lock, command `timeout` would be useful, and you will see it in `test-many.sh`, giving each run a time limit of 1 second.
+
+Feel free to add more tests or even build a new test framework if the current one does not meet your requirements.
+
+We will NOT be grading based on testing results in this project, but you should check correctness before you dive deeper in performance or fairness.
 
 ## Hand In
 
-* Source files (.c, .h) of your locks and three libraries (counter, hash, and list)
-* Makefile which builds each of the libraries
-* The **PDF** version of your report.
+* Source files (.c, .h) of your locks.
+* `Makefile` which builds each of the libraries (Running `make` should build all four libraries).
+* The **PDF** version of your report. The report should be NO MORE than 8 pages. Be concise!
+* DO NOT submit \*.o \*.so or any binary files.
 
 <div id="footer">
   Adapted from <a href="http://pages.cs.wisc.edu/~remzi/Classes/537/Spring2010/Projects/p4.html"> WISC CS537 </a> by Remzi Arpaci-Dusseau 
