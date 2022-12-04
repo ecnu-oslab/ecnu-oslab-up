@@ -50,11 +50,9 @@ To submit your project assignments, please
   * 3a [Locks and Condition Variables](../projects/linux/lock_thread/), [(invite link)](https://classroom.github.com/a/jD-AboCz)
   * 3b [xv6 VM Layout](../projects/xv6/vmlayout/), [(invite link)](https://classroom.github.com/a/ioWs7D5N)
 
-<!--
 * Project 4: 
-  - 4a [File Defragmentation](../projects/linux/defragmentation/), [(invite link)](https://classroom.github.com/a/ijOXoW3a)
-  - 4b [xv6 Kernel Thread](../projects/xv6/thread/), [(invite link)](https://classroom.github.com/a/P3RglByW)
-  -->
+  - 4a [File Defragmentation](../projects/linux/defragmentation/), [(invite link)](https://classroom.github.com/a/x5Fa0t2G)
+  - 4b [xv6 Kernel Thread](../projects/xv6/thread/), [(invite link)](https://classroom.github.com/a/_T2TXDpb)
 
 ### xv6 lab environments
 
