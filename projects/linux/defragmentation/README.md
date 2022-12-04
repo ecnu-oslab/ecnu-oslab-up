@@ -105,6 +105,21 @@ f = fopen("datafile-defrag", "r");
 bytes = fread(buffer, 1024, 1, f); 
 ```
 
+### File Type Detection
+
+You can dump files into Linux file system (this is optional though) and have a closer look to those files. It is handy to have a command that tells you the type of those files (picture, text, executable ...). Linux `file` command is used to determine the type of a file based on its content. For example, for file `file1`
+
+```bash
+$ file file1
+file1: PDF document, version 1.4, 4 pages
+```
+
+Or simply run for all files in current directory:
+
+```bash
+file *
+```
+
 ## Hand In
 
 When we grade your project, we will expect to see the following files in your repository (there may be more):
