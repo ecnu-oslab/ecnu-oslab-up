@@ -15,10 +15,10 @@ Instructor: &nbsp; Yuanbin Wu
 Email: &nbsp; ybwu\[at\]cs.ecnu.edu.cn  
 Office: &nbsp; 713 Science Building B
 
-TA: &nbsp; Rundong Yang (杨润东)
+TA: &nbsp; Rundong Yang (杨润东)  
 Email: &nbsp; 1353097778\[at\]qq.com
 
-TA: &nbsp; Daiye Miao (缪岱烨)
+TA: &nbsp; Daiye Miao (缪岱烨)  
 Email: &nbsp; 2825467993\[at\]qq.com
 
 
