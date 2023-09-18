@@ -86,6 +86,7 @@ Notes: For all xv6 projects, we start from a clean version of xv6 kernel (i.e., 
 ### Lab Slides
 
 * [Lab1](slides/lab-1.pdf)
+* [Lab2](slides/lab-2.pdf)
 <!--
 * [Lab1](slides/lab-1.pdf)
 * [Lab2 git](slides/lab2git.pdf)
