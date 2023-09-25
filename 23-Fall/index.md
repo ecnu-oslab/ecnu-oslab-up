@@ -43,11 +43,11 @@ To submit your project assignments, please
   * 0a [Get familiar with Linux](../projects/linux/linux_warmup/), [(invite link)](https://classroom.github.com/a/zIc_8RpZ)
   * 0b [A simple key-value store](../projects/linux/kv_store), [(invite link)](https://classroom.github.com/a/3VbYpdi6)
 
-<!--
 * Project 1: 
-  * 1a [A Unix Shell](../projects/linux/myshell/), [(invite link)](https://classroom.github.com/a/m8SlBYTH)
-  * 1b [xv6 System Call](../projects/xv6/system_call/), [(invite link)](https://classroom.github.com/a/9c4PqiuJ)
+  * 1a [A Unix Shell](../projects/linux/myshell/), [(invite link)](https://classroom.github.com/a/KFHwm5Zu)
+  * 1b [xv6 System Call](../projects/xv6/system_call/), [(invite link)](https://classroom.github.com/a/m0y0-Z8u)
 
+<!--
 * Project 2: 
   * 2a [Dynamic Memory Allocation](../projects/linux/malloc/), [(invite link)](https://classroom.github.com/a/IunKqXl7)
   * 2b [xv6 Scheduling](../projects/xv6/scheduling/), [(invite link)](https://classroom.github.com/a/uS6fgBvO)
@@ -74,8 +74,8 @@ Notes: For all xv6 projects, we start from a clean version of xv6 kernel (i.e., 
 
 * [Lecture 1](slides/lecture-1.pdf)
 * [Lecture 2](slides/lecture-2.pdf)
+* [Lecture 3](slides/lecture-3.pdf)
 <!--
-* [Lecture 3](slides/lecture-3.pdf), [Scheduling](slides/Scheduling.pdf)
 * [Lecture 4](slides/lecture-4.pdf)
 * [Lecture 5](slides/lecture-5.pdf)
 * [Lecture 6](slides/lecture-6.pdf)
