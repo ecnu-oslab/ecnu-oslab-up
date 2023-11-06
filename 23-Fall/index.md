@@ -87,6 +87,7 @@ Notes: For all xv6 projects, we start from a clean version of xv6 kernel (i.e., 
 
 * [Lab1](slides/lab-1.pdf)
 * [Lab2](slides/lab-2.pdf)
+* [Lab3](slides/lab-3.pdf) ([xv6Debug.pdf](https://github.com/ecnu-oslab/ecnu-oslab-up/blob/main/23-Fall/slides/xv6Debug.pdf))
 <!--
 * [Lab1](slides/lab-1.pdf)
 * [Lab2 git](slides/lab2git.pdf)
